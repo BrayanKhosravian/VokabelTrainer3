@@ -4,10 +4,11 @@
              x:Class="VokabelTrainer3.Views.WelcomePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to the vocabuary trainer" HorizontalOptions="Center"/>
+            <Label Text="Welcome to the vocabulary trainer" HorizontalOptions="Center"/>
             <Button Text="Options" Command="Command_Options"/>
-            <Button Text="Basics" Command="Command_Basic"/>
-            <Button Text="Advanced" Command="Command_Advanced"/>
+            <Button Text="Basic Vocabs" Command="Command_BasicVocabs"/>
+            <Button Text="Advanced Vocabs" Command="Command_AdvancedVocabs"/>
+            <Button Text="Custom Vocabs" Command="Command_CustomVocabs"/>
             <Button Text="Statistics" Command="Command_Statistics"/>
         </StackLayout>
     </ContentPage.Content>

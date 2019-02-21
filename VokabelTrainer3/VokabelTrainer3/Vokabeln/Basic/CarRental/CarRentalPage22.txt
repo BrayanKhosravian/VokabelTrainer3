@@ -1,0 +1,43 @@
+﻿manual::(mit der) Hand
+mark::kennzeichnen
+means of transportation::Verkehrsmitttel
+medical::medizinisch
+offer::anbieten
+optional::auf Wunsch
+parking violation::Parkvergehen
+penalty::Strafe
+period::Zeitspanne
+power brakes::Servobremse
+power steering::Servolenkung
+prefer::vorziehen/lieber haben
+preferably::vorzugsweise
+property::Eigentum
+protection::Schutz
+provide::liefern / zur Verfügung stellen
+reasonable::vernünftig
+recommend::empfehlen
+refresh::erfrischen
+registration::Anmeldung (KFZ)
+relieve::erleichtern
+rent/hire::mieten
+rental agreement::Mietvertrag
+rental fee::Mietgebühr
+rest::ausruhen
+RV/recreational vehicle::Wohnmobil
+scheduled::planmäßig
+season::Jahreszeit
+sidewalk::Gehsteig
+size::Größe
+station wagon::Kombi (Auto)
+storage space::Stauraum
+suede::Rauhleder
+suit::passen
+surcharge::Zusatzgebühr
+sustain::aushalten/aufrechtrhalten
+theft::Diebstahl
+ticket::Strafmandat
+transmission::Getriebe
+treatment::Behandlung
+turn in::zurückgeben
+upholstery::Polsterung
+waiver::Vericht(serklärung)

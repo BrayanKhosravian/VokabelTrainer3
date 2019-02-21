@@ -1,0 +1,64 @@
+﻿overnight::übernacht
+oversize::Übergröße
+package::Paket
+pay a fine::Strafe zahlen
+pay duty on::Zoll zahlen für
+pay extra::extra zahlen
+pay in cash::bar zahlen
+penalty::Strafe
+performance::Aufführung
+perfume::Parfum
+period of time::Zeitdauer
+piece::Stück
+plane::Flugzeug
+platform::Bahnsteig
+play::Theaterstück
+plug::Stecker
+possess::besitzen
+possible::möglich
+possiblity::Möglichkeit
+post office/mail office::Post
+presentation::Präsentation
+present::präsentieren
+price::Preis
+prior to::vor (+Zeitangabe)
+procedures::Ablauf
+proceed::verwärtsgehen
+proof::Beweis
+protect::schützen
+provide::zur Verfügung stellen
+purchase::Kauf
+to purchase::kaufen
+purpose::Zweck
+quantity::Menge
+rail::Schiene
+range::sich erstrecken
+rapid::schnell
+rate::Kurs/Rate/Tempo
+receipt::Rechnung(sabschnitt)
+reduce::verringern
+refund::Rückzahlung
+refundable::refundierbar
+regarding/concerning::betreffend
+region::Gebiet
+regulations::Vorschriften
+remain/stay::bleiben
+require::verlangen/fordern
+reserved seat::reservierter Platz
+return ticket::Rückfahrkarte
+ride free::frei fahren
+savings account::Sparkonto
+scarf::Schal
+schedule::Fahrplan
+seat::Sitzplatz
+seat belt::Sitzgurt
+secretary::Sekretärin
+security::Sicherheit
+seminar::Seminar
+signature::Unterwschrift
+to sign::unterschreiben
+silk::Seide
+simple::einfach
+single::einfach
+sleeping car::Schlafwagen
+smoking section::Raucherzone

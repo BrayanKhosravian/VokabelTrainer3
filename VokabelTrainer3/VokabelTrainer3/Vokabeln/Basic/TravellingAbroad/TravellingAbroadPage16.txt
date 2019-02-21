@@ -1,0 +1,64 @@
+﻿important::wichtig
+in advance::im vorraus
+in most cases::in den meisten Fällen
+in order to::um zu 
+include::einschließen
+including::einschließlich
+information desk::Informationsschalter
+instead::statt dessen
+instead (of)::anstelle (von), statt dessen
+interstate::Autobahn 
+involve::einbeziehen
+issue::ausgeben, ausstellen
+items::Artikel
+itinerary::Reiseroute
+jewelry::Schmuck
+journey::Reise
+keep the date::Termin einhalten
+keep::halten
+large::groß
+leave(open)::offen lassen
+left::links/übrig
+less than::weniger als
+liability::Haftung/Verpflichtung
+line::Reihe
+line up/queue up::sich anstellen
+liquor::Spirituosen
+loudspeaker::Lautsprecher
+main::Haupt
+main entrance::Haupteingang
+mainland::Festland
+make a reservation::eine Reservierung vornehmen
+make sure::sich vergewissern
+meal::Mahlzeit
+measure::messen
+medical::medizinisch
+medical care::medizinische Versorgung
+meeting::Besprechung
+miss::versäumen
+modest::gemäßigt
+monthly pass::Monatskarte
+mountain::Berg
+mule::Maultier
+national park::Nationalpark
+nationwide::auf dem ganzen Bundesgebiet
+network::Netzwerk
+next to::nahe bei
+number::Zahl
+to number::numerieren
+obtain::erhalten
+ocean::Ozean/Meer
+of course::natürlich
+offer::Angebot
+to offer::anbieten
+on board::im Zug
+on business::geschäftlich
+on your left::links 
+once::sobald
+one way ticket::einfache Fahrkarte
+only::nur
+open::öffnen
+operate::in Betrieb sein
+option::Wahl
+outlet::Auslaß
+outside::außerhalb

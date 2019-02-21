@@ -1,0 +1,63 @@
+﻿division::Abteilung
+downtown::im Stadtzentrum
+due date::Fälligkeitsdatum
+due to::wegen
+dump::abladen/fallen lassen
+duration::Dauer
+duty::Zoll/Pflicht
+duty free::zollfrei
+east::Osten
+economy::Wirtschaft
+embassy::Botschaft
+emergency::Notfall
+employment::Arbeit/Beschäftigung
+entrance fee::Eintrittsgebühr
+exceed::überschreiten
+except::außer
+exception::Ausnahme
+excursion::Exkursion
+exempt::befreien
+expenses::Ausgaben
+expensive::teuer
+explain::erklären
+fare::Fahrpreis
+feasability::Durchführbarkeit
+federal::Bundes
+fee::Honorar
+ferry::Fähre
+fill in::ausfüllen
+final::endgültig
+final::endgültig
+fine::(Geld)Strafe
+firearms::Feuerwaffen
+flight::Flug
+flight::Flug
+flight attendant::Flugbegleiter
+fly::fliegen
+food::Nahrung/Essen
+foreign::ausländisch/fremd
+foreigner::Ausländer
+form::Formular
+frequent::häufig
+fruit::Obst
+further details::weitere Einzelheiten
+gas station::Tankstelle
+gas(oline)::Benzin
+gate::Flugsteig
+gift::Geschenk
+government::Regierung
+grocery store::Lebensmittelgeschäft
+guided tour::geführte Tour
+health::Gesundheit
+health insurance::Krankenversicherung
+helicopter::Hubschrauber
+horse back riding::reiten
+host::Gastgeber
+I am afraid::ich fürchte
+imagine::sich vorstellen
+immigration::Einwanderung
+important::wichtig
+in advance::im vorraus
+in most cases::in den meisten Fällen
+in order to::um zu 
+include::einschließen

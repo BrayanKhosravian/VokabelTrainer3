@@ -1,0 +1,64 @@
+﻿case::Fall
+cash::Bargeld
+cash advance::Vorschuss
+certainly::Sicherlich
+certify::Bestätigen
+change::umsteigen/ändern
+charge::Gebühr
+charge::Gebühr verrechnen
+cheap::billig
+check::überprüfen
+circle::Rang
+citizens::Bürger/Einwohner
+clear customs::Zollformalitäten erledigen
+coach car::Waggon
+coat::Mantel
+coin::Münze
+company::Firma
+compensation::Entschädigung
+complete::vollständig
+complete::vervollständigen
+completely::völlig
+complimentary::gratis
+comprehensible::verständlich
+comprehension::Verständnis
+concern::betreffen
+conditions/terms::Bedingungen
+conference::Konferenz
+confirm::bestätigen
+connection::Anschluss
+connections::Anschlüsse (Züge, Flüge,..)
+consulate::Konsulat
+contact::kontaktieren
+convert::umwechseln
+conveyor belt::Förderband
+counter::Schalter
+country::Land
+cover::(ab) decken
+cross::überqueren
+currency::Währung
+current::Strom
+customs::Zoll
+customs declaration::Zollerkärung
+customs facilities::Zollabfertigung
+customs officer::Zollbeamter
+date::Termin
+daylight saving time::Sommerzeit
+declare::erkären 
+decrease::verringern
+denial::Ablehnung
+denomination::Nennwert
+deny::ablehnen/leugnen
+depart::wegfahren
+departure::Abfahrt
+departure  lounge::Abflughalle
+depend on::abhängen von
+dependence::Abhängigkeit
+designate::kennzeichnen
+design::bezeichnen
+destination::Reiseziel
+determine::bestimmen
+dining car::Speisewagen
+disadvantage::Nachteil
+discount::Ermäßigung
+divide::(auf) teilen

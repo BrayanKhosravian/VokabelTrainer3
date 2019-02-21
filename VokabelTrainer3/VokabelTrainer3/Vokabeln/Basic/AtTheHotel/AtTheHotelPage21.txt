@@ -1,0 +1,42 @@
+﻿maintenance::Wartung
+make sure::sich vergewissern
+movie::Film
+necessary::notwendig
+offer::anbieten
+on duty::im Dienst
+opposite::gegüber
+panel::Täfelung
+pet::Haustier
+picturesque::malerisch
+pillow::Kopfpolster
+praise::Lob
+press::bügeln
+property::Eigentum/Grundstück
+protect::schützen
+push::stoßen, drücken
+responsibility::Verantwortung
+safe deposit box::Banksafe
+sales manager::Verkaufsleiter
+secure::sicher
+selection::Auswahl
+sincerely::mit freundlichen Grüßen
+single room::Einzelzimmer
+slide::rutschen/schieben
+soap::Seife
+spa::Kurort/Whirlpool
+spare room::Gästezimmer
+staff::Belegschaft/Mitarbeiter
+stairs::Stiegen
+stay::Aufenthalt
+steam room::Dampfbad
+suspicious::verdächtig
+ticket agency::Kartenbüro
+touch::berühren
+towel::Handtuch
+tropical::tropisch
+truly::wirklich
+vacancy::Zimmer frei
+valet::Diener
+valley::Tal
+valuables::Wertgegenstände
+view::Aussicht

@@ -1,0 +1,66 @@
+﻿plane::Flugzeug
+platform::Bahnsteig
+play::Theaterstück
+plug::Stecker
+possess::besitzen
+possible::möglich
+possiblity::Möglichkeit
+post office/mail office::Post
+presentation::Präsentation
+present::präsentieren
+price::Preis
+prior to::vor (+Zeitangabe)
+procedures::Ablauf
+proceed::vorwärtsgehen
+proof::Beweis
+protect::schützen
+provide::zur Verfügung stellen
+purchase::Kauf
+purchase::kaufen
+purpose::Zweck
+quantity::Menge
+rail::Schiene
+range::sich erstrecken
+rapid::schnell
+rate::Kurs/Rate/Tempo
+receipt::Rechnung(sabschnitt)
+reduce::verringern
+refund::Rückzahlung
+refundable::refundierbar
+regarding/concerning::betreffend
+region::Gebiet
+regulations::Vorschriften
+remain/stay::bleiben
+require::verlangen/fordern
+reserved seat::reservierter Platz
+return ticket::Rückfahrkarte
+ride free::frei fahren
+savings account::Sparkonto
+scarf::Schal
+schedule::Fahrplan
+seat::Sitzplatz
+seat belt::Sitzgurt
+secretary::Sekretärin
+security::Sicherheit
+seminar::Seminar
+signature::Unterwschrift
+sign::unterschreiben
+silk::Seide
+simple::einfach
+single::einfach
+sleeping car::Schlafwagen
+smoking section::Raucherzone
+sold out::ausverkauft
+special::besonders
+specify::genaue Angaben machen
+staffed station::(mit Personal) besetzte Station
+stalls/parquet::Parkett
+stamp::stempeln
+stay::bleiben
+still::noch
+storage area::Lagerraum
+stretch::sich erstrecken
+subject to changes::Änderungen vorbehalten
+substantial::wesentlich
+subway/underground::U-Bahn
+suit::passen

@@ -1,0 +1,39 @@
+﻿suitcase::Koffer
+supplement::Zusatz
+supply::Lieferung
+tax::Steuer
+temperature::Temperatur
+tender::Zahlungsmittel
+terminal::Endstation
+through::durch
+ticket office::Fahrkartenschalter
+time of arrival::Ankunftszeit
+time of departure::Abfahrtszeit
+time zone::Zeitzone
+toll free::gebührenfrei
+toys::Spielzeug
+tram/street car::Straßenbahn
+transfer desk::Umsteigschalter
+transfer::umsteigen
+travel agent::Reisebüro
+travel insurance::Reiseversicherung
+travel::reisen
+travellers check::Reisescheck
+trip::Reise
+unable::unfähig
+unfortunately::unglücklicherweise
+unless::wenn nicht
+unlimited::unbeschränkt
+vaccination::Impfung
+valid::gültig
+validate::entwerten
+vary::variieren
+vending machine::Verkaufsautomat
+visa::Visum
+waiting list::Warteliste
+want::wollen
+watch::Uhr
+water falls::Wasserfall
+weight::Gewicht
+within::innerhalb
+without::außerhalb

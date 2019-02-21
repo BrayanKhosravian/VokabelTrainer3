@@ -1,0 +1,47 @@
+﻿above::über/oberhalb
+accommodation::Unterbringung
+around the clock::rund um die Uhr
+assume::annehmen
+attentive::aufmerksam
+river bank::Flussufer
+be located/be situated::sich befinden
+be ready::bereit sein
+bear::Bär
+blanket::Decke
+burglar proof::einbruchsicher
+button::Knopf
+canyon::Schlucht
+car rental::Autovermietung
+client::Kunde
+concierge::Portier
+conditions::Bedingungen
+confirm::bestätigen
+confirmation::Bestätigung
+control::steuern
+deposit::Kaution
+desire::wünschen
+dining room::Speiszimmer
+dry cleaning::Putzerei / chem. Reinigung
+during::während(Hauptwort)
+enjoyable::unterhaltsam
+extension::Erweiterung
+fascinating::faszinierend
+file::Akte
+fill out::ausfüllen
+following::folgend
+gift::Geschenk
+hall::Vorzimmer
+heart::Herz
+heat::Hitze/Wärme
+hesitate::zögern
+hors dóevres::Vorspeise
+immediately::sofort
+impress::beeindrucken
+iron::Bügeleisen
+landing::Stiegenabsatz
+laundry::Wäscherei
+library::Bibliothek
+lifeguard::Bademeister/Rettungsschwimmer
+lock::versperren
+luxurious::luxeriös
+maid service::Zimmermädchenservice

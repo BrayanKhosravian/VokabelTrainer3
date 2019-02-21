@@ -1,0 +1,61 @@
+﻿(tax) allowance::(Steuer)Freibetrag
+accept::annehmen
+accident insurance::Unfallversicherung 
+accommodation::Unterbringung
+accompany::begleiten
+according to::gemäß
+account::Konto
+adapter::Adapter
+additional::zusätzlich
+advance/progress::Fortschritt
+advance reservation::Reservierung im Voraus
+advance::Fortschritte machen
+advantage::Vorteil
+afternoon::Nachmittag
+aircraft::Flugzeug
+airline::Fluglinie
+alcohol::Alkohol
+allow::erlauben
+amount::Menge
+annual::jährlich
+another day::an einem anderen Tag
+apart from::abgesehen von
+apologize::sich entschuldigen
+applicable::anwendbar
+apply for::beantragen
+approximately::ungefähr
+area::Gebiet
+arrival::Ankunft
+arrive::ankommen
+as well::auch
+assess::beurteilen/festsetzen
+assume::annehmen/übernehmen
+at least::wenigstens
+at no charge::ohne Gebühr
+at the same time::zur gleichen Zeit
+authorize::berechtigen/genehmigen
+automatic teller machine::Bankomat
+available::verfügbar
+bag::Tasche
+(baggage)claim::Gepäckausgabe
+balance::Kontostand
+be due to::im Begriff sein 
+be ready::bereit sein
+bearer::Träger
+because of/due to::wegen
+beer::Bier
+benefit::Nutzen/Gewinn
+bicycle::Fahrrad
+bill::Banknote
+book::buchen
+booking charge::Buchungsgebühr
+border::Grenze
+brochure::Broschüre
+business trip::Geschäftsreise
+camera equipment::Photoausrüstung
+cancel::absagen/stornieren
+cancellation::Stornierung
+cancellation fee::Stornogebühr
+carpet::Teppich
+carry::tragen
+carton of cigarettes::Stange Zigaretten

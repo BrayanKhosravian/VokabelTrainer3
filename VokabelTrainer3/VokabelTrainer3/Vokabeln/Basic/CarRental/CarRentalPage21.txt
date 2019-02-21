@@ -1,0 +1,56 @@
+﻿accidental::zufällig
+accommodation::Unterbringung
+adventure::Abenteuer
+adventurous::abenteuerlich
+agreement::Abmachung
+appear::erscheinen
+arrival::Ankunft
+at a special rate::zu einem speziellen Tarif
+be charged with::beschuldigt werden mit
+below::unterhalb
+benefit::Vorteil/Nutzten
+calendar day::Kalendertag
+camp site::Campingplatz
+cause::verursachen
+central locking system::Zentralverriegelung
+citation::Vorladung (Gericht)
+claim::Anspruch
+complaint::Beschwerde
+comply::einwilligen
+contract hotels::Vertragshotel
+coverage::Deckung
+curb::Randstein
+damage::Schaden
+deny::zurückweisen
+deposit::Kaution
+discover::entdecken
+drivers license::Führerschein
+driveway::Einfahrt
+electric window control::Elektrische Fensterheber
+envelope::Kouvert
+even::sogar
+event::Ereignis
+exceed::überschreiten
+except::außer
+expense::Ausgabe (Geld)
+failure::Fehler
+fine::Geldstrafe
+furnish::ausstatten
+gas(oline)::Benzin
+guilty::schuldig
+hatchback::Hecktür
+high season::Hochsaison
+include::einschließen
+insurance::Versicherung
+increase::vergrößern
+injure::verletzen
+insurer::Versicherr
+law::Gesetz
+leather::Leder
+levy (a fine)::(Strafe) auferlegen
+liability::Haftung
+limit::begrenzen
+location::Ort
+look for::suchen
+loss::Verlust
+make::Marke (Auto)
