@@ -21,6 +21,7 @@ namespace VokabelTrainer3.Droid.Services
             this.CreateDirectory(Paths.RootPath);
             this.CreateDirectory(Paths.BasicVocabsPath);
             this.CreateDirectory(Paths.AdvancedVocabsPath);
+            this.CreateDirectory(Paths.CustomVocabsPath);
 
             var basicVocabsPaths = Paths.GetBasicVocabsPaths;
             foreach (var path in basicVocabsPaths)

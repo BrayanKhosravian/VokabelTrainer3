@@ -12,13 +12,15 @@ namespace VokabelTrainer3
     public partial class App : Application
     {
         private static IContainer _container;
-        public IDirectoryService DirectoryService { get; }
+        private readonly IDirectoryService _directoryService;
+        private readonly IFileService _fileService;
 
-        public App(IDirectoryService directoryService)
+        public App(IDirectoryService directoryService, IFileService fileService)
         {
             InitializeComponent();
 
-            this.DirectoryService = directoryService;
+            _directoryService = directoryService;
+            _fileService = fileService;
 
             Container = ContainerConfig.Configure();
 
@@ -34,7 +36,8 @@ namespace VokabelTrainer3
         protected override void OnStart()
         {
             // Handle when your app starts
-            DirectoryService.CreateDirectoryHirarchy();
+            _directoryService.CreateDirectoryHirarchy();
+            _fileService.CreateTextFileHirarchy();
         }
 
         protected override void OnSleep()

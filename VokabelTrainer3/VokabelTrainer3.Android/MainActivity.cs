@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using VokabelTrainer3.Droid.Helpers;
 using VokabelTrainer3.Droid.Services;
 using VokabelTrainer3.Interfaces;
 
@@ -23,8 +24,12 @@ namespace VokabelTrainer3.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             IDirectoryService directoryService = new DirectoryService();
+            directoryService.CreateDirectoryHirarchy();
 
-            LoadApplication(new App(directoryService));
+            IFileService fileService = new FileService(new TextFileParser());
+            fileService.CreateTextFileHirarchy();
+
+            LoadApplication(new App(directoryService, fileService));
         }
     }
 }
