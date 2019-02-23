@@ -5,11 +5,11 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to the vocabulary trainer" HorizontalOptions="Center"/>
-            <Button Text="Options" Command="Command_Options"/>
-            <Button Text="Basic Vocabs" Command="Command_BasicVocabs"/>
-            <Button Text="Advanced Vocabs" Command="Command_AdvancedVocabs"/>
-            <Button Text="Custom Vocabs" Command="Command_CustomVocabs"/>
-            <Button Text="Statistics" Command="Command_Statistics"/>
+            <Button Text="Options" Command="{Binding Command_Options}"/>
+            <Button Text="Basic Vocabs" Command="{Binding Command_BasicVocabs}"/>
+            <Button Text="Advanced Vocabs" Command="{Binding Command_AdvancedVocabs}"/>
+            <Button Text="Custom Vocabs" Command="{Binding Command_CustomVocabs}"/>
+            <Button Text="Statistics" Command="{Binding Command_Statistics}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

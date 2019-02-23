@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using VokabelTrainer3.Droid.Services;
+using VokabelTrainer3.Interfaces;
 
 namespace VokabelTrainer3.Droid
 {
@@ -19,7 +21,10 @@ namespace VokabelTrainer3.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            IDirectoryService directoryService = new DirectoryService();
+
+            LoadApplication(new App(directoryService));
         }
     }
 }

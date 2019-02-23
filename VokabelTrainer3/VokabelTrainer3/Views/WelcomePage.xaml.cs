@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Autofac;
+using VokabelTrainer3.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +16,9 @@ namespace VokabelTrainer3.Views
 		public WelcomePage ()
 		{
 			InitializeComponent ();
+
+		    BindingContext = ((App) Application.Current).Container.Resolve<WelcomePageVM>();
+
 		}
 	}
 }

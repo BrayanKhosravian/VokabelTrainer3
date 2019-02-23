@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VokabelTrainer3.Interfaces
 {
-    interface IFileService
+    public interface IFileService
     {
         void CreateTextFileHirarchy();
 
