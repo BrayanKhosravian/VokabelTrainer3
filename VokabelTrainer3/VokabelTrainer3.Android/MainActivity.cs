@@ -24,10 +24,7 @@ namespace VokabelTrainer3.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             IDirectoryService directoryService = new DirectoryService();
-            directoryService.CreateDirectoryHirarchy();
-
             IFileService fileService = new FileService(new TextFileParser());
-            fileService.CreateTextFileHirarchy();
 
             LoadApplication(new App(directoryService, fileService));
         }
