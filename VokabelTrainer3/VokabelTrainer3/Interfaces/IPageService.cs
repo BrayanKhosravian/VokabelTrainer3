@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace VokabelTrainer3.Interfaces
 {
-    interface IPageService
+    public interface IPageService
     {
         Task NavigationPushAsync(Page page);
         Task NavigationPopAsync();

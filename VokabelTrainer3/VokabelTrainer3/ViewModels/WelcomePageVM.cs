@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace VokabelTrainer3.ViewModels
 {
-    class WelcomePageVM : BaseVM
+    public class WelcomePageVM : BaseVM
     {
         private readonly IPageService _pageService;
 

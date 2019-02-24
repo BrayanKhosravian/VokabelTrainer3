@@ -31,6 +31,7 @@ namespace VokabelTrainer3
 
 
         // get paths from each parent path
+      //  public static  string[]
         public static string[] GetBasicVocabsPaths => new[] { AtTheHotel, CarRental, GettingStarted, TheJourney, TravellingAbroad };
         // public static string[] GetAdvancedVocabsPaths => new[] { };
     }

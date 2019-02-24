@@ -13,7 +13,7 @@
     <None Remove="Vokabeln\Basic\AtTheHotel\At the hotel 1.txt" />
     <None Remove="Vokabeln\Basic\AtTheHotel\At the hotel 2.txt" />
     <None Remove="Vokabeln\Basic\CarRental\Car rental 1.txt" />
-    <None Remove="Vokabeln\Basic\CarRental\Car rental 22.txt" />
+    <None Remove="Vokabeln\Basic\CarRental\Car rental 2.txt" />
     <None Remove="Vokabeln\Basic\GettingStarted\Getting started 1.txt" />
     <None Remove="Vokabeln\Basic\GettingStarted\Getting started 2.txt" />
     <None Remove="Vokabeln\Basic\GettingStarted\Getting started 3.txt" />
@@ -38,7 +38,7 @@
     <EmbeddedResource Include="Vokabeln\Basic\AtTheHotel\At the hotel 1.txt" />
     <EmbeddedResource Include="Vokabeln\Basic\AtTheHotel\At the hotel 2.txt" />
     <EmbeddedResource Include="Vokabeln\Basic\CarRental\Car rental 1.txt" />
-    <EmbeddedResource Include="Vokabeln\Basic\CarRental\Car rental 22.txt" />
+    <EmbeddedResource Include="Vokabeln\Basic\CarRental\Car rental 2.txt" />
     <EmbeddedResource Include="Vokabeln\Basic\GettingStarted\Getting started 1.txt" />
     <EmbeddedResource Include="Vokabeln\Basic\GettingStarted\Getting started 2.txt" />
     <EmbeddedResource Include="Vokabeln\Basic\GettingStarted\Getting started 3.txt" />

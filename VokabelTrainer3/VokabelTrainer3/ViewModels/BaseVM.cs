@@ -6,7 +6,7 @@ using System.Text;
 
 namespace VokabelTrainer3.ViewModels
 {
-    class BaseVM : INotifyPropertyChanged
+    public class BaseVM : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

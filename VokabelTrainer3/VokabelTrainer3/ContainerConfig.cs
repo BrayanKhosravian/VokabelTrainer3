@@ -15,9 +15,6 @@ namespace VokabelTrainer3
         public static IContainer Configure()
         {
             var builder = new ContainerBuilder();
-
-            var app = Application.Current as App;
-           // builder.RegisterInstance(app.DirectoryService).As<IDirectoryService>();
             
             // viewmodel registration
             builder.RegisterType<WelcomePageVM>();

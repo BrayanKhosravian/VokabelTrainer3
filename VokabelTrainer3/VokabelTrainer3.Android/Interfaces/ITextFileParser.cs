@@ -17,6 +17,6 @@ namespace VokabelTrainer3.Droid.Interfaces
         bool PathContainsBasic(string path);
         bool PathContainsAdvanced(string path);
         bool PathContainsCustom(string path);
-        string GetFileName(string path);
+        string GetFileNameFromResource(string path);
     }
 }

@@ -34,31 +34,30 @@ namespace VokabelTrainer3.Droid.Services
             {
                 if (_textFileParser.PathContainsBasic(resource))
                 {
-                    var fileName = _textFileParser.GetFileName(resource);
                     this.ResourceWriter(Paths.BasicVocabsPath, resource);
                 }
                 else if (_textFileParser.PathContainsAdvanced(resource))
                 {
-                    var fileName = _textFileParser.GetFileName(resource);
                     this.ResourceWriter(Paths.AdvancedVocabsPath, resource);
                 }
                 else if (_textFileParser.PathContainsCustom(resource))
                 {
-                    var fileName = _textFileParser.GetFileName(resource);
                     this.ResourceWriter(Paths.CustomVocabsPath, resource);
                 }
             }
 
         }
 
-        private void ResourceWriter(string path, string resourcePath)
+        private void ResourceWriter(string path, string resource)
         {
-            File.WriteAllText(path, ResourceReader(resourcePath));
+            var fileName = _textFileParser.GetFileNameFromResource(resource);
+            var concretePath = Path.Combine(path, fileName);
+            File.WriteAllText(concretePath, ResourceReader(resource));
         }
 
         private string ResourceReader(string resource)
         {
-            Stream stream = _assembly.GetManifestResourceStream(resource);
+            using (Stream stream = _assembly.GetManifestResourceStream(resource))
             using (var reader = new System.IO.StreamReader(stream))
             {
                 return reader.ReadToEnd();

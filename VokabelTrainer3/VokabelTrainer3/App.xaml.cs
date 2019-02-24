@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using Autofac;
 using VokabelTrainer3.Interfaces;
+using VokabelTrainer3.ViewModels;
 using VokabelTrainer3.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

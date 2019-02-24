@@ -34,14 +34,13 @@ namespace VokabelTrainer3.Droid.Helpers
             return false;
         }
 
-        public string GetFileName(string path)
+        public string GetFileNameFromResource(string path)
         {
-            //string pattern = @"([A-Za-z0-9\-]+)\.txt";
-            //Regex regex = new Regex(pattern, RegexOptions.RightToLeft);
+            string pattern = @"([ A-Z a-z 0-9 \-]+)\.txt";
+            Regex regex = new Regex(pattern, RegexOptions.RightToLeft | RegexOptions.IgnorePatternWhitespace); 
 
-            //string result = regex.Match(path).Value;
-            //return result;
-            return Path.GetFileName(path);
+            string result = regex.Match(path).Value;
+            return result;
         }
 
         private bool Match(string path, string match)
