@@ -65,7 +65,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Vokabeln\Advanced\" />
     <Folder Include="Vokabeln\Custom\" />
   </ItemGroup>
