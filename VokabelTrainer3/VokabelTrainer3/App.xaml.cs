@@ -12,7 +12,6 @@ namespace VokabelTrainer3
 {
     public partial class App : Application
     {
-        private static IContainer _container;
         private readonly IDirectoryService _directoryService;
         private readonly IFileService _fileService;
 
@@ -23,15 +22,14 @@ namespace VokabelTrainer3
             _directoryService = directoryService;
             _fileService = fileService;
 
-            Container = ContainerConfig.Configure();
+            this.ContainerBootstrapper();
 
             MainPage = new NavigationPage(new WelcomePage());
         }
 
-        public IContainer Container
+        void ContainerBootstrapper()
         {
-            get { return _container; }
-            private set { _container = value; }
+            ViewModelLocator.SetContainerProvider(ContainerConfig.Configure());
         }
 
         protected override void OnStart()

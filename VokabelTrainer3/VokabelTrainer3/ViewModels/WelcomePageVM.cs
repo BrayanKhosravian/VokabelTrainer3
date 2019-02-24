@@ -13,17 +13,17 @@ namespace VokabelTrainer3.ViewModels
     {
         private readonly IPageService _pageService;
 
-        public ICommand Command_Options { get; set; }
-        public ICommand Command_BasicVocabs { get; set; }
-        public ICommand Command_AdvancedVocabs { get; set; }
-        public ICommand Command_CustomVocabs { get; set; }
-        public ICommand Command_Statistics { get; set; }
+        public ICommand Command_Options { get; private set; }
+        public ICommand Command_BasicVocabs { get; private set; }
+        public ICommand Command_AdvancedVocabs { get; private set; }
+        public ICommand Command_CustomVocabs { get; private set; }
+        public ICommand Command_Statistics { get; private set; }
 
         public WelcomePageVM(IPageService pageService)
         {
             _pageService = pageService;
 
-            Command_BasicVocabs = new Command(async () => await _pageService.NavigationPushAsync(new ChapterSelectionListViewPage()));
+            Command_BasicVocabs = new Command<string>(async path => await _pageService.NavigationPushAsync(new ChapterSelectionListViewPage(path)));
         }
     }
 }

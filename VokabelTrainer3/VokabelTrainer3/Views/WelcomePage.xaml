@@ -1,15 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:VokabelTrainer3="clr-namespace:VokabelTrainer3;assembly=VokabelTrainer3"
              x:Class="VokabelTrainer3.Views.WelcomePage">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to the vocabulary trainer" HorizontalOptions="Center"/>
+
             <Button Text="Options" Command="{Binding Command_Options}"/>
-            <Button Text="Basic Vocabs" Command="{Binding Command_BasicVocabs}"/>
-            <Button Text="Advanced Vocabs" Command="{Binding Command_AdvancedVocabs}"/>
-            <Button Text="Custom Vocabs" Command="{Binding Command_CustomVocabs}"/>
+
+            <Button Text="Basic Vocabs" 
+                    Command="{Binding Command_BasicVocabs}" 
+                    CommandParameter="{x:Static VokabelTrainer3:Paths.BasicVocabsPath}"/>
+
+            <Button Text="Advanced Vocabs" 
+                    Command="{Binding Command_AdvancedVocabs}"
+                    CommandParameter="{x:Static VokabelTrainer3:Paths.AdvancedVocabsPath}"/>
+
+            <Button Text="Custom Vocabs" 
+                    Command="{Binding Command_CustomVocabs}"
+                    CommandParameter="{x:Static VokabelTrainer3:Paths.CustomVocabsPath}"/>
+
             <Button Text="Statistics" Command="{Binding Command_Statistics}"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

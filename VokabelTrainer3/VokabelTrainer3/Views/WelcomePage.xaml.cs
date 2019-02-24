@@ -17,7 +17,7 @@ namespace VokabelTrainer3.Views
 		{
 			InitializeComponent ();
 
-		    BindingContext = ((App) Application.Current).Container.Resolve<WelcomePageVM>();
+		    BindingContext = ViewModelLocator.Resolve<WelcomePageVM>();
 
 		}
 	}

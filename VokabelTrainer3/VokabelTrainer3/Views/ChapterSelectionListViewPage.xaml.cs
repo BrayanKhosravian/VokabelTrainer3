@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Autofac;
 using VokabelTrainer3.ViewModels;
@@ -13,12 +14,15 @@ namespace VokabelTrainer3.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChapterSelectionListViewPage : ContentPage
     {
+        private readonly string _path;
 
-        public ChapterSelectionListViewPage()
+        public ChapterSelectionListViewPage(string path)
         {
             InitializeComponent();
 
-            BindingContext = ((App) Application.Current).Container.Resolve<ChapterSelectionListViewPageVM>();
+            _path = path;
+
+            BindingContext = ViewModelLocator.Resolve<ChapterSelectionListViewPageVM>();
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)

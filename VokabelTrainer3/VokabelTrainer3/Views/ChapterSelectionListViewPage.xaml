@@ -2,32 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VokabelTrainer3.Views.ChapterSelectionListViewPage">
-  <ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement">
+  
+    <ListView ItemsSource="{Binding Chapters}"
+              SelectedItem="{Binding IsSelected, Mode=TwoWay}"
+              GroupDisplayBinding="{Binding ChapterGroup.Name}"
+              ItemTapped="Handle_ItemTapped"
+              IsGroupingEnabled="True"
+              CachingStrategy="RecycleElement">
             
-    <!--Built in Cells-->
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <TextCell Text="{Binding .}" />
-        </DataTemplate>
-    </ListView.ItemTemplate>
-    
-    <!--Custom View Cells-->
-    <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
+        <!--Built in Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Chapter.Name}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+   
   </ListView>
 </ContentPage>
