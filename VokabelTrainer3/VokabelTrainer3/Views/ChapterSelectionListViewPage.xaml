@@ -17,7 +17,9 @@
                     <ContentView>
                         <Label Text="{Binding GroupName}" VerticalOptions="Center"/>
                         <ContentView.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={x:Reference ChapterSelectionPage}, Path=BindingContext.HeaderSelectedCommand}"/>
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference ChapterSelectionPage}, 
+                                                                    Path=BindingContext.HeaderSelectedCommand}" 
+                                                  CommandParameter="{Binding GroupName}"/>
                         </ContentView.GestureRecognizers>
                     </ContentView>
                 </ViewCell>

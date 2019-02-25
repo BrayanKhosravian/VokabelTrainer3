@@ -45,5 +45,15 @@ namespace VokabelTrainer3.Views
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
         }
+
+        //private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
+        //{
+        //    if(sender is ChapterGroup group)
+        //    {
+        //        var groupname = group.GroupName;
+        //        DisplayAlert(groupname, groupname, groupname);
+        //    }
+           
+        //}
     }
 }

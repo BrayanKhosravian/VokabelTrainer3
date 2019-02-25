@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using VokabelTrainer3.Interfaces;
@@ -12,7 +13,20 @@ namespace VokabelTrainer3.ViewModels
     class ChapterSelectionListViewPageVM : BaseVM
     {
         public ObservableCollection<ChapterGroup> Chapters { get; private set; } = new ObservableCollection<ChapterGroup>();
-        public ICommand HeaderSelectedCommand { get; private set; }
+
+        private List<ChapterGroup> _data = new List<ChapterGroup>()
+        {
+            new ChapterGroup("GroupA", "Path")
+            {
+                new Chapter("Chapter1A", "Path"),
+                new Chapter("Chapter2A", "Path")
+            },
+            new ChapterGroup("GroupB", "path")
+            {
+                new Chapter("Chapter1B", "Path"),
+                new Chapter("Chapter2B", "Path")
+            }
+        };
 
         private readonly IPageService _pageService;
 
@@ -21,25 +35,59 @@ namespace VokabelTrainer3.ViewModels
             _pageService = pageService;
 
             this.CreateChapters();
-
-            HeaderSelectedCommand = new Command(async () => await _pageService.DisplayAlert("title", "header tapped", "ok"));
         }
 
+        public ICommand HeaderSelectedCommand
+        {
+            get
+            {
+                return new Command<string>(groupName =>
+                {
+                    int index = LookUp(groupName);
+                    if (_data[index].IsSelected)
+                    {
+                        _data[index].IsSelected = false;
+                    }
+                    else
+                    {
+                        _data[index].IsSelected = true;
+                    }
+                    this.CreateChapters();
+                });
+            }
+
+        }
 
         public void CreateChapters()
         {
-            ChapterGroup group1 = new ChapterGroup("GroupA", "Path");
-            group1.Add(new Chapter("Chapter1A", "Path"));
-            group1.Add(new Chapter("Chapter2A", "Path"));
-
-            ChapterGroup group2 = new ChapterGroup("GroupB", "path");
-            group2.Add(new Chapter("Chapter1B", "Path"));
-            group2.Add(new Chapter("Chapter2B", "Path"));
-
-            Chapters.Add(group1);
-            Chapters.Add(group2);
+            Chapters.Clear();
+            int i = 0;
+            foreach (var group in _data)
+            {
+                if (group.IsSelected)   // expand
+                {
+                    Chapters.Add(group);
+                }
+                else                    // collapse
+                {
+                    Chapters.Add(new ChapterGroup(group.GroupName, group.GroupPath));
+                }
+                i++;
+            }
         }
-        
+
+        public int LookUp(string groupName)
+        {
+            foreach (var group in Chapters)
+            {
+                if (group.GroupName == groupName)
+                {
+                    return Chapters.IndexOf(group);
+                }
+            }
+            throw new ArgumentOutOfRangeException();
+        }
+
         public void ExpandChapter()
         {
 
@@ -47,13 +95,7 @@ namespace VokabelTrainer3.ViewModels
 
         public void CollapsChapter(ChapterGroup group)
         {
-            foreach (var chapter in Chapters)
-            {
-                if (chapter.GroupName == group.GroupName)
-                {
-                    Chapters.Remove(group);
-                }
-            }
+            
         }
 
 

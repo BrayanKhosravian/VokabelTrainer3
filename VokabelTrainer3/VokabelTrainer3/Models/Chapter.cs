@@ -5,7 +5,7 @@ using System.Text;
 
 namespace VokabelTrainer3.Models
 {
-    class Chapter
+    public class Chapter
     {
         public string ChapterName { get; set; }
         public string ChapterPath { get; set; }
