@@ -31,12 +31,5 @@
             </DataTemplate>
         </ListView.ItemTemplate>
 
-        <!--Built in Cells-->
-        <!--<ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding ChapterName}" />
-            </DataTemplate>
-        </ListView.ItemTemplate>-->
-   
   </ListView>
 </ContentPage>

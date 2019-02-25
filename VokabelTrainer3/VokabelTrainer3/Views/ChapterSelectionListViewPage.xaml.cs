@@ -17,8 +17,6 @@ namespace VokabelTrainer3.Views
     {
         private readonly string _path;
 
-
-
         public ChapterSelectionListViewPage(string path)
         {
             InitializeComponent();
@@ -34,26 +32,12 @@ namespace VokabelTrainer3.Views
             if (e.Item == null)
                 return;
 
-            if (e.Item is ChapterGroup chapterGroup)
-            {
-                (BindingContext as ChapterSelectionListViewPageVM).CollapsChapter(chapterGroup);
-            }
-
-
-            // await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-
-            //Deselect Item
             ((ListView)sender).SelectedItem = null;
         }
 
-        //private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
-        //{
-        //    if(sender is ChapterGroup group)
-        //    {
-        //        var groupname = group.GroupName;
-        //        DisplayAlert(groupname, groupname, groupname);
-        //    }
-           
-        //}
+        protected override void OnAppearing()
+        {
+            (BindingContext as ChapterSelectionListViewPageVM)?.CreateChapters();
+        }
     }
 }

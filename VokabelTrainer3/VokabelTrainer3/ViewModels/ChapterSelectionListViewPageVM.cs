@@ -34,7 +34,7 @@ namespace VokabelTrainer3.ViewModels
         {
             _pageService = pageService;
 
-            this.CreateChapters();
+            // this.CreateChapters();
         }
 
         public ICommand HeaderSelectedCommand
