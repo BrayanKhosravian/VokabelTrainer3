@@ -1,21 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VokabelTrainer3.Views.ChapterSelectionListViewPage">
-  
+             x:Class="VokabelTrainer3.Views.ChapterSelectionListViewPage"
+             x:Name="ChapterSelectionPage">
+
     <ListView ItemsSource="{Binding Chapters}"
               SelectedItem="{Binding IsSelected, Mode=TwoWay}"
-              GroupDisplayBinding="{Binding ChapterGroup.Name}"
+              GroupDisplayBinding="{Binding GroupName}"
+              IsGroupingEnabled="true"
               ItemTapped="Handle_ItemTapped"
-              IsGroupingEnabled="True"
               CachingStrategy="RecycleElement">
-            
-        <!--Built in Cells-->
+
+        <ListView.GroupHeaderTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ContentView>
+                        <Label Text="{Binding GroupName}" VerticalOptions="Center"/>
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference ChapterSelectionPage}, Path=BindingContext.HeaderSelectedCommand}"/>
+                        </ContentView.GestureRecognizers>
+                    </ContentView>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.GroupHeaderTemplate>
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Chapter.Name}" />
+                <TextCell Text="{Binding ChapterName}"/>
             </DataTemplate>
         </ListView.ItemTemplate>
+
+        <!--Built in Cells-->
+        <!--<ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding ChapterName}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>-->
    
   </ListView>
 </ContentPage>

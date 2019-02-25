@@ -6,13 +6,13 @@ namespace VokabelTrainer3.Models
 {
     class ChapterGroup : List<Chapter>
     {
-        public string Name { get; set; }
-        public string Path { get; set; }
+        public string GroupName { get; set; }
+        public string GroupPath { get; set; }
 
-        public ChapterGroup(string name, string path)
+        public ChapterGroup(string groupName, string groupPath)
         {
-            Name = name;
-            Path = path;
+            GroupName = groupName;
+            GroupPath = groupPath;
         }
     }
 }

@@ -23,7 +23,16 @@ namespace VokabelTrainer3.ViewModels
         {
             _pageService = pageService;
 
-            Command_BasicVocabs = new Command<string>(async path => await _pageService.NavigationPushAsync(new ChapterSelectionListViewPage(path)));
+            Command_BasicVocabs = new Command<string>(Execute);
+            Command_AdvancedVocabs = new Command<string>(Execute);
+            Command_CustomVocabs = new Command<string>(Execute);
+
+            async void Execute(string path)
+            {
+                await _pageService.NavigationPushAsync(new ChapterSelectionListViewPage(path));
+            }
+
+
         }
     }
 }

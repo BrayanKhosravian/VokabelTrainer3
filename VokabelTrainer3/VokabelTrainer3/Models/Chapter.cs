@@ -7,13 +7,13 @@ namespace VokabelTrainer3.Models
 {
     class Chapter
     {
-        public string Name { get; set; }
-        public string Path { get; set; }
+        public string ChapterName { get; set; }
+        public string ChapterPath { get; set; }
 
-        public Chapter(string name, string path)
+        public Chapter(string chapterName, string chapterPath)
         {
-            Name = name;
-            Path = path;
+            ChapterName = chapterName;
+            ChapterPath = chapterPath;
         }
         
     }

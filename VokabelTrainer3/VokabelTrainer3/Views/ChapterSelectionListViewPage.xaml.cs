@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Autofac;
+using VokabelTrainer3.Models;
 using VokabelTrainer3.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,6 +16,8 @@ namespace VokabelTrainer3.Views
     public partial class ChapterSelectionListViewPage : ContentPage
     {
         private readonly string _path;
+
+
 
         public ChapterSelectionListViewPage(string path)
         {
@@ -27,10 +30,17 @@ namespace VokabelTrainer3.Views
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            if (e.Item is ChapterGroup chapterGroup)
+            {
+                (BindingContext as ChapterSelectionListViewPageVM).CollapsChapter(chapterGroup);
+            }
+
+
+            // await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
