@@ -8,6 +8,7 @@ using System.Windows.Input;
 using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace VokabelTrainer3.ViewModels
 {
@@ -49,10 +50,12 @@ namespace VokabelTrainer3.ViewModels
                     int index = LookUp(groupName);
                     if (_data[index].IsSelected)
                     {
+                        this.DeselectAll();
                         _data[index].IsSelected = false;
                     }
                     else
                     {
+                        this.DeselectAll();
                         _data[index].IsSelected = true;
                     }
                     this.CreateChapters();
@@ -95,7 +98,7 @@ namespace VokabelTrainer3.ViewModels
             }
         }
 
-        public int LookUp(string groupName)
+        private int LookUp(string groupName)
         {
             foreach (var group in Chapters)
             {
@@ -107,16 +110,14 @@ namespace VokabelTrainer3.ViewModels
             throw new ArgumentOutOfRangeException();
         }
 
-        public void ExpandChapter()
+        private void DeselectAll()
         {
-
+            // Chapters.ForEach(group => group.IsSelected = false);
+            foreach (var group in Chapters)
+            {
+                group.IsSelected = false;
+            }
         }
-
-        public void CollapsChapter(ChapterGroup group)
-        {
-            
-        }
-
 
     }
 }
