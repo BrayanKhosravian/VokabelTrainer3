@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
@@ -13,26 +14,30 @@ namespace VokabelTrainer3.ViewModels
     class ChapterSelectionListViewPageVM : BaseVM
     {
         public ObservableCollection<ChapterGroup> Chapters { get; private set; } = new ObservableCollection<ChapterGroup>();
-
-        private readonly List<ChapterGroup> _data = new List<ChapterGroup>()
-        {
-            new ChapterGroup("GroupA", "Path")
-            {
-                new Chapter("Chapter1A", "Path"),
-                new Chapter("Chapter2A", "Path")
-            },
-            new ChapterGroup("GroupB", "path")
-            {
-                new Chapter("Chapter1B", "Path"),
-                new Chapter("Chapter2B", "Path")
-            }
-        };
+        private readonly List<ChapterGroup> _data = new List<ChapterGroup>();
+        //private readonly List<ChapterGroup> _data = new List<ChapterGroup>()
+        //{
+        //    new ChapterGroup("GroupA", "Path")
+        //    {
+        //        new Chapter("Chapter1A", "Path"),
+        //        new Chapter("Chapter2A", "Path")
+        //    },
+        //    new ChapterGroup("GroupB", "path")
+        //    {
+        //        new Chapter("Chapter1B", "Path"),
+        //        new Chapter("Chapter2B", "Path")
+        //    }
+        //};
 
         private readonly IPageService _pageService;
+        private readonly IDirectoryService _directoryService;
+        private readonly IFileService _fileService;
 
-        public ChapterSelectionListViewPageVM(IPageService pageService)
+        public ChapterSelectionListViewPageVM(IPageService pageService, IDirectoryService directoryService, IFileService fileService)
         {
             _pageService = pageService;
+            _directoryService = directoryService;
+            _fileService = fileService;
         }
 
         public ICommand HeaderSelectedCommand
@@ -52,6 +57,22 @@ namespace VokabelTrainer3.ViewModels
                     }
                     this.CreateChapters();
                 });
+            }
+
+        }
+
+        public void CreateData(string path)
+        {
+            var directories = Directory.GetDirectories(path);
+            foreach (var directory in directories)
+            {
+                var chapterGroup = new ChapterGroup(_directoryService.GetLastDirectoryName(directory), directory);
+                var chapters = Directory.GetFiles(directory);
+                foreach (var chapter in chapters)
+                {
+                    chapterGroup.Add(new Chapter(Path.GetFileName(chapter), chapter));
+                }
+                _data.Add(chapterGroup);
             }
 
         }

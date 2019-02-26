@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-
+using System.Text.RegularExpressions;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -30,10 +30,13 @@ namespace VokabelTrainer3.Droid.Services
             }
         }
 
-        public string[] GetDirectoriesPaths(string path)
+        public string GetLastDirectoryName(string path)
         {
-            var directories = Directory.GetDirectories(path);
-            return directories;
+            string pattern = @"([ A-Z a-z 0-9 \-]+)";
+            Regex regex = new Regex(pattern, RegexOptions.RightToLeft | RegexOptions.IgnorePatternWhitespace);
+
+            string result = regex.Match(path).Value;
+            return result;
         }
 
         private void CreateDirectory(string path)

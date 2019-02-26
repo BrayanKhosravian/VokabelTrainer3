@@ -32,15 +32,34 @@ namespace VokabelTrainer3.Droid.Services
         {
             foreach (var resource in _assembly.GetManifestResourceNames())
             {
-                if (_textFileParser.PathContainsBasic(resource))
+                if (_textFileParser.PathContains(resource, "Basic"))
                 {
-                    this.ResourceWriter(Paths.BasicVocabsPath, resource);
+                    if (_textFileParser.PathContains(resource, "At the hotel"))
+                    {
+                        this.ResourceWriter(Paths.AtTheHotel, resource);
+                    }
+                    else if (_textFileParser.PathContains(resource, "Car rental"))
+                    {
+                        this.ResourceWriter(Paths.CarRental, resource);
+                    }
+                    else if (_textFileParser.PathContains(resource, "Getting started"))
+                    {
+                        this.ResourceWriter(Paths.GettingStarted,resource);
+                    }
+                    else if (_textFileParser.PathContains(resource, "The journey"))
+                    {
+                        this.ResourceWriter(Paths.TheJourney, resource);
+                    }
+                    else if (_textFileParser.PathContains(resource, "Travelling abroad"))
+                    {
+                        this.ResourceWriter(Paths.TravellingAbroad, resource);
+                    }
                 }
-                else if (_textFileParser.PathContainsAdvanced(resource))
+                else if (_textFileParser.PathContains(resource, "Advanced"))
                 {
                     this.ResourceWriter(Paths.AdvancedVocabsPath, resource);
                 }
-                else if (_textFileParser.PathContainsCustom(resource))
+                else if (_textFileParser.PathContains(resource, "Custom"))
                 {
                     this.ResourceWriter(Paths.CustomVocabsPath, resource);
                 }
@@ -58,7 +77,8 @@ namespace VokabelTrainer3.Droid.Services
         {
             var fileName = _textFileParser.GetFileNameFromResource(resource);
             var concretePath = Path.Combine(path, fileName);
-            File.WriteAllText(concretePath, ResourceReader(resource));
+            string text = ResourceReader(resource);
+            File.WriteAllText(concretePath, text);
         }
 
         private string ResourceReader(string resource)

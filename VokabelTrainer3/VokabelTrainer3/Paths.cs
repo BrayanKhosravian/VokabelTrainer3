@@ -18,11 +18,11 @@ namespace VokabelTrainer3
         public static string CustomVocabsPath { get; } = Path.Combine(RootPath, "Custom");
 
         // Children paths from "basic" parent paths
-        public static string AtTheHotel { get; } = Path.Combine(BasicVocabsPath, "AtTheHotel");
-        public static string CarRental { get; } = Path.Combine(BasicVocabsPath, "CarRental");
-        public static string GettingStarted { get; } = Path.Combine(BasicVocabsPath, "GettingStarted");
-        public static string TheJourney { get; } = Path.Combine(BasicVocabsPath, "TheJourney");
-        public static string TravellingAbroad { get; } = Path.Combine(BasicVocabsPath, "TravellingAbroad");
+        public static string AtTheHotel { get; } = Path.Combine(BasicVocabsPath, "At the hotel");
+        public static string CarRental { get; } = Path.Combine(BasicVocabsPath, "Car rental");
+        public static string GettingStarted { get; } = Path.Combine(BasicVocabsPath, "Getting started");
+        public static string TheJourney { get; } = Path.Combine(BasicVocabsPath, "The journey");
+        public static string TravellingAbroad { get; } = Path.Combine(BasicVocabsPath, "Travelling abroad");
 
         // Children paths from "advanced" parent paths
 

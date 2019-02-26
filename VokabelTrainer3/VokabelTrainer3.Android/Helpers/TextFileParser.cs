@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -16,6 +17,12 @@ namespace VokabelTrainer3.Droid.Helpers
 {
     class TextFileParser : ITextFileParser
     {
+        public bool PathContains(string path, string match)
+        {
+            if (this.Match(path, match)) return true;
+            return false;
+        }
+
         public bool PathContainsBasic(string path)
         {
             if (this.Match(path, "Basic")) return true;
@@ -45,7 +52,7 @@ namespace VokabelTrainer3.Droid.Helpers
 
         private bool Match(string path, string match)
         {
-            if (path.StartsWith("VokabelTrainer3.Vokabeln." + match) && this.IsTextFile(path)) return true;
+            if (path.StartsWith("VokabelTrainer3.Vokabeln.") && path.Contains(match) && this.IsTextFile(path)) return true;
             return false;
         }
 

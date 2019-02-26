@@ -37,7 +37,9 @@ namespace VokabelTrainer3.Views
 
         protected override void OnAppearing()
         {
-            (BindingContext as ChapterSelectionListViewPageVM)?.CreateChapters();
+            var vm = (BindingContext as ChapterSelectionListViewPageVM);
+            vm?.CreateData(_path);
+            vm?.CreateChapters();
         }
     }
 }
