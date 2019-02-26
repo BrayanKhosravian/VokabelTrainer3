@@ -18,6 +18,7 @@ namespace VokabelTrainer3.ViewModels
     {
         public ObservableCollection<ChapterGroup> Chapters { get; private set; } = new ObservableCollection<ChapterGroup>();
         private readonly List<ChapterGroup> _data = new List<ChapterGroup>();
+        // comment is to provided a knowledge on how _data looks like
         //private readonly List<ChapterGroup> _data = new List<ChapterGroup>()
         //{
         //    new ChapterGroup("GroupA", "Path")
@@ -30,7 +31,7 @@ namespace VokabelTrainer3.ViewModels
         //        new Chapter("Chapter1B", "Path"),
         //        new Chapter("Chapter2B", "Path")
         //    }
-        //};
+        //};    
 
         private readonly IPageService _pageService;
         private readonly IDirectoryService _directoryService;
@@ -43,7 +44,7 @@ namespace VokabelTrainer3.ViewModels
             _fileService = fileService;
         }
 
-        public ICommand HeaderSelectedCommand
+        public ICommand GroupSelectedCommand
         {
             get
             {
@@ -66,10 +67,10 @@ namespace VokabelTrainer3.ViewModels
 
         }
 
-        public async Task NavigateToNextView()
+        public ICommand ChapterSelectedCommand => new Command<string>(async chapterPath =>
         {
-            await _pageService.NavigationPushAsync(new VocabQuizPage());
-        }
+            await _pageService.NavigationPushAsync(new VocabQuizPage(chapterPath));
+        });
 
         public void CreateData(string path)
         {
@@ -120,7 +121,6 @@ namespace VokabelTrainer3.ViewModels
 
         private void DeselectAll()
         {
-            // Chapters.ForEach(group => group.IsSelected = false);
             foreach (var group in Chapters)
             {
                 group.IsSelected = false;

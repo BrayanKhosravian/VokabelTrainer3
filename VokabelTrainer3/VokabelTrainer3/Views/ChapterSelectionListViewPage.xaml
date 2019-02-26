@@ -8,17 +8,16 @@
               SelectedItem="{Binding IsSelected, Mode=TwoWay}"
               GroupDisplayBinding="{Binding GroupName}"
               IsGroupingEnabled="true"
-              ItemTapped="Handle_ItemTapped"
               CachingStrategy="RecycleElement">
 
         <ListView.GroupHeaderTemplate>
             <DataTemplate>
                 <ViewCell>
                     <ContentView>
-                        <Label Text="{Binding GroupName}" VerticalOptions="Center"/>
+                        <Label Text="{Binding GroupName}" VerticalOptions="Center" TextColor="Red"/>
                         <ContentView.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Source={x:Reference ChapterSelectionPage}, 
-                                                                    Path=BindingContext.HeaderSelectedCommand}" 
+                                                                    Path=BindingContext.GroupSelectedCommand}" 
                                                   CommandParameter="{Binding GroupName}"/>
                         </ContentView.GestureRecognizers>
                     </ContentView>
@@ -26,8 +25,17 @@
             </DataTemplate>
         </ListView.GroupHeaderTemplate>
         <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding ChapterName}"/>
+            <DataTemplate >
+                <ViewCell>
+                    <ContentView>
+                        <Label Text="{Binding ChapterName}" VerticalOptions="Center" />
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference ChapterSelectionPage},
+                                                                    Path=BindingContext.ChapterSelectedCommand}"
+                                                  CommandParameter="{Binding ChapterPath}"/>
+                        </ContentView.GestureRecognizers>
+                    </ContentView>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
 

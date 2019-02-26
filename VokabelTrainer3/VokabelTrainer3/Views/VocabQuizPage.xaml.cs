@@ -12,10 +12,19 @@ namespace VokabelTrainer3.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VocabQuizPage : ContentPage
     {
-        public VocabQuizPage()
+        private string _chapterPath;
+        public VocabQuizPage(string chapterPath)
         {
             InitializeComponent();
+
+            _chapterPath = chapterPath;
+
             BindingContext = ViewModelLocator.Resolve<VocabQuizPageVM>();
+        }
+
+        protected override void OnAppearing()
+        {
+            
         }
     }
 }
