@@ -14,7 +14,7 @@ namespace VokabelTrainer3.ViewModels
     {
         public ObservableCollection<ChapterGroup> Chapters { get; private set; } = new ObservableCollection<ChapterGroup>();
 
-        private List<ChapterGroup> _data = new List<ChapterGroup>()
+        private readonly List<ChapterGroup> _data = new List<ChapterGroup>()
         {
             new ChapterGroup("GroupA", "Path")
             {
@@ -33,8 +33,6 @@ namespace VokabelTrainer3.ViewModels
         public ChapterSelectionListViewPageVM(IPageService pageService)
         {
             _pageService = pageService;
-
-            // this.CreateChapters();
         }
 
         public ICommand HeaderSelectedCommand

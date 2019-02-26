@@ -7,6 +7,7 @@ namespace VokabelTrainer3.Interfaces
     public interface IDirectoryService
     {
         void CreateDirectoryHirarchy();
+        string[] GetDirectoriesPaths(string path);
 
     }
 }

@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using Autofac;
 using VokabelTrainer3.Interfaces;
+using VokabelTrainer3.Services;
 using VokabelTrainer3.ViewModels;
 using VokabelTrainer3.Views;
 using Xamarin.Forms;
@@ -12,31 +13,36 @@ namespace VokabelTrainer3
 {
     public partial class App : Application
     {
-        private readonly IDirectoryService _directoryService;
-        private readonly IFileService _fileService;
-
         public App(IDirectoryService directoryService, IFileService fileService)
         {
             InitializeComponent();
 
-            _directoryService = directoryService;
-            _fileService = fileService;
-
-            this.ContainerBootstrapper();
+            this.ContainerBootstrapper(directoryService, fileService);
 
             MainPage = new NavigationPage(new WelcomePage());
         }
 
-        void ContainerBootstrapper()
+        void ContainerBootstrapper(IDirectoryService directoryService, IFileService fileService)
         {
-            ViewModelLocator.SetContainerProvider(ContainerConfig.Configure());
+            ContainerBuilder builder = new ContainerBuilder();
+
+            // viewmodel registration
+            builder.RegisterType<WelcomePageVM>();
+            builder.RegisterType<ChapterSelectionListViewPageVM>();
+
+            // register services
+            builder.RegisterType<PageService>().As<IPageService>();
+
+            // register runtime instances
+            builder.RegisterInstance(directoryService).As<IDirectoryService>();
+            builder.RegisterInstance(fileService).As<IFileService>();
+
+            ViewModelLocator.SetContainerProvider(builder.Build());
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
-            _directoryService.CreateDirectoryHirarchy();
-            _fileService.CreateTextFileHirarchy();
         }
 
         protected override void OnSleep()

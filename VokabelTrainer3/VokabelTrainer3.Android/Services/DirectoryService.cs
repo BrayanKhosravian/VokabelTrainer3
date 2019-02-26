@@ -30,6 +30,12 @@ namespace VokabelTrainer3.Droid.Services
             }
         }
 
+        public string[] GetDirectoriesPaths(string path)
+        {
+            var directories = Directory.GetDirectories(path);
+            return directories;
+        }
+
         private void CreateDirectory(string path)
         {
             if (!Directory.Exists(path)) Directory.CreateDirectory(path);

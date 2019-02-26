@@ -26,7 +26,7 @@ namespace VokabelTrainer3.Views
             BindingContext = ViewModelLocator.Resolve<ChapterSelectionListViewPageVM>();
         }
 
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
 
             if (e.Item == null)

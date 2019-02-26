@@ -48,6 +48,12 @@ namespace VokabelTrainer3.Droid.Services
 
         }
 
+        public string[] GetFilesPaths(string path)
+        {
+            var files = Directory.GetFiles(path);
+            return files;
+        }
+
         private void ResourceWriter(string path, string resource)
         {
             var fileName = _textFileParser.GetFileNameFromResource(resource);

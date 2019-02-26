@@ -7,6 +7,6 @@ namespace VokabelTrainer3.Interfaces
     public interface IFileService
     {
         void CreateTextFileHirarchy();
-
+        string[] GetFilesPaths(string path);
     }
 }

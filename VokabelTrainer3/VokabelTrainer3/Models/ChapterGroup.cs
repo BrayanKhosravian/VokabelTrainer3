@@ -19,10 +19,5 @@ namespace VokabelTrainer3.Models
             GroupPath = groupPath;
         }
 
-        public ChapterGroup()
-        {
-            
-        }
-
     }
 }
