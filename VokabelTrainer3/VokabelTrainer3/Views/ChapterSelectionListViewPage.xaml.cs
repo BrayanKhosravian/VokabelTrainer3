@@ -26,13 +26,15 @@ namespace VokabelTrainer3.Views
             BindingContext = ViewModelLocator.Resolve<ChapterSelectionListViewPageVM>();
         }
 
-        void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
 
             if (e.Item == null)
                 return;
 
             ((ListView)sender).SelectedItem = null;
+
+            await (BindingContext as ChapterSelectionListViewPageVM)?.NavigateToNextView();
         }
 
         protected override void OnAppearing()

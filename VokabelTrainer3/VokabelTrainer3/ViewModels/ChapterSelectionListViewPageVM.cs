@@ -4,9 +4,11 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
+using VokabelTrainer3.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -64,8 +66,14 @@ namespace VokabelTrainer3.ViewModels
 
         }
 
+        public async Task NavigateToNextView()
+        {
+            await _pageService.NavigationPushAsync(new VocabQuizPage());
+        }
+
         public void CreateData(string path)
         {
+            _data.Clear();
             var directories = Directory.GetDirectories(path);
             foreach (var directory in directories)
             {

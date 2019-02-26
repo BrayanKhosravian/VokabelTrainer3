@@ -29,6 +29,7 @@ namespace VokabelTrainer3
             // viewmodel registration
             builder.RegisterType<WelcomePageVM>();
             builder.RegisterType<ChapterSelectionListViewPageVM>();
+            builder.RegisterType<VocabQuizPageVM>();
 
             // register services
             builder.RegisterType<PageService>().As<IPageService>();
