@@ -1,12 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:VokabelTrainer3.Views.Converters;assembly=VokabelTrainer3"
              x:Class="VokabelTrainer3.Views.VocabQuizPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StringToIntConverter x:Key="StringToIntConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Padding="5">
+                <Label Text="{Binding OutputLabel}"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Center"/>
+
+                <Entry Text="{Binding InputEntry}"
+                       HorizontalOptions="FillAndExpand"
+                       Placeholder="Input"
+                       HorizontalTextAlignment="Center"/>
+
+                <Button Text="Next"
+                        Command="{Binding Command_Next}"
+                        VerticalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Padding="5">
+                <Label Text="Statisitcs" HorizontalOptions="Center" TextColor="Black"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Count of total vocabs: " TextColor="Black"/>
+                    <Label Text="{Binding StatsTotalVocabs, Converter=StringToIntConverter}"
+                           HorizontalOptions="Start"
+                           TextColor="Black"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Count of finished vocabs: " TextColor="Black"/>
+                    <Label Text="{Binding StatsFinishedVocabs, Converter=StringToIntConverter}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Count of correct vocabs: " TextColor="Black"/>
+                    <Label Text="{Binding StatsCorrectVocabs, Converter=StringToIntConverter}"
+                           HorizontalOptions="Start"
+                           TextColor="DarkGreen" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Count of wrong vocabs: " TextColor="Black"/>
+                    <Label Text="{Binding StatsIncorrectVocabs, Converter=StringToIntConverter}"
+                           HorizontalOptions="Start"
+                           TextColor="Red" />
+                </StackLayout>
+
+            </StackLayout>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

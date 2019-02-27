@@ -10,7 +10,7 @@ namespace VokabelTrainer3.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void Set<T>(ref T backingField, T value, [CallerMemberName] string callerName = null) where T : class
+        protected void SetProperty<T>(ref T backingField, T value, [CallerMemberName] string callerName = null)
         {
             if (EqualityComparer<T>.Default.Equals(backingField, value)) return;
 
@@ -18,7 +18,6 @@ namespace VokabelTrainer3.ViewModels
 
             OnPropertyChanged(callerName);
         }
-
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

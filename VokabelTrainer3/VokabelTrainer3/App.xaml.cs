@@ -33,6 +33,7 @@ namespace VokabelTrainer3
 
             // register services
             builder.RegisterType<PageService>().As<IPageService>();
+            builder.RegisterType<VocabularyParserService>().As<IVocabularyParserService>();
 
             // register runtime instances
             builder.RegisterInstance(directoryService).As<IDirectoryService>();
