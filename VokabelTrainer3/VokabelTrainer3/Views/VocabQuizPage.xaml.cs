@@ -29,7 +29,7 @@ namespace VokabelTrainer3.Views
 
         protected override void OnAppearing()
         {
-            (BindingContext as VocabQuizPageVM)?.GenerateDictionary(_chapterPath);
+            (BindingContext as VocabQuizPageVM)?.ConfgureData(_chapterPath);
         }
     }
 }

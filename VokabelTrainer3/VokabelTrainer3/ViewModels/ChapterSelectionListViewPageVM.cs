@@ -35,13 +35,11 @@ namespace VokabelTrainer3.ViewModels
 
         private readonly IPageService _pageService;
         private readonly IDirectoryService _directoryService;
-        private readonly IFileService _fileService;
 
-        public ChapterSelectionListViewPageVM(IPageService pageService, IDirectoryService directoryService, IFileService fileService)
+        public ChapterSelectionListViewPageVM(IPageService pageService, IDirectoryService directoryService)
         {
             _pageService = pageService;
             _directoryService = directoryService;
-            _fileService = fileService;
         }
 
         public ICommand GroupSelectedCommand

@@ -8,7 +8,7 @@ arrival::Ankunft
 at a special rate::zu einem speziellen Tarif
 be charged with::beschuldigt werden mit
 below::unterhalb
-benefit::Vorteil/Nutzten
+benefit::Vorteil/Nutzen
 calendar day::Kalendertag
 camp site::Campingplatz
 cause::verursachen
@@ -26,7 +26,7 @@ deposit::Kaution
 discover::entdecken
 drivers license::Führerschein
 driveway::Einfahrt
-electric window control::Elektrische Fensterheber
+electric window control::elektrische Fensterheber
 envelope::Kouvert
 even::sogar
 event::Ereignis
@@ -44,7 +44,7 @@ include::einschließen
 insurance::Versicherung
 increase::vergrößern
 injure::verletzen
-insurer::Versicherr
+insurer::Versicherer
 law::Gesetz
 leather::Leder
 levy (a fine)::(Strafe) auferlegen

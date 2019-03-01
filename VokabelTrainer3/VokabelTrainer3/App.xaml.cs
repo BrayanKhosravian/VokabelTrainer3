@@ -13,16 +13,16 @@ namespace VokabelTrainer3
 {
     public partial class App : Application
     {
-        public App(IDirectoryService directoryService, IFileService fileService)
+        public App(IDirectoryService directoryService)
         {
             InitializeComponent();
 
-            this.ContainerBootstrapper(directoryService, fileService);
+            this.ContainerBootstrapper(directoryService);
 
             MainPage = new NavigationPage(new WelcomePage());
         }
 
-        void ContainerBootstrapper(IDirectoryService directoryService, IFileService fileService)
+        void ContainerBootstrapper(IDirectoryService directoryService)
         {
             ContainerBuilder builder = new ContainerBuilder();
 
@@ -36,8 +36,8 @@ namespace VokabelTrainer3
             builder.RegisterType<VocabularyParserService>().As<IVocabularyParserService>();
 
             // register runtime instances
-            builder.RegisterInstance(directoryService).As<IDirectoryService>();
-            builder.RegisterInstance(fileService).As<IFileService>();
+             builder.RegisterInstance(directoryService).As<IDirectoryService>();
+            // builder.RegisterInstance(fileService).As<IFileService>();
 
             ViewModelLocator.SetContainerProvider(builder.Build());
         }

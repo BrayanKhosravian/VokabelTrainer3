@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
 
@@ -10,6 +11,7 @@ namespace VokabelTrainer3.Services
 {
     class VocabularyParserService : IVocabularyParserService
     {
+        private Dictionary<EnglishVocabGroup, GermanVocabGroup> _vocabs = new Dictionary<EnglishVocabGroup, GermanVocabGroup>();
 
         public VocabularyParserService()
         {
@@ -18,8 +20,6 @@ namespace VokabelTrainer3.Services
 
         public Dictionary<EnglishVocabGroup, GermanVocabGroup> GetRandomizedVocabDictionary(string path)
         {
-             Dictionary<EnglishVocabGroup,GermanVocabGroup> vocabs = new Dictionary<EnglishVocabGroup, GermanVocabGroup>();
-            
             string[] lines = File.ReadAllLines(path);
             foreach (var line in lines)
             {
@@ -27,13 +27,12 @@ namespace VokabelTrainer3.Services
 
                 var englishVocabGroup = this.GetEnglishVocabGroup(line);
                 var germanVocabGroup = this.GetGermanVocabGroup(line);
-                vocabs.Add(englishVocabGroup,germanVocabGroup);
+                _vocabs.Add(englishVocabGroup,germanVocabGroup);
             }
 
-            this.RandomizeDictionary(vocabs);
-            return vocabs;
+            this.RandomizeDictionary();
+            return _vocabs;
         }
-
 
         private EnglishVocabGroup GetEnglishVocabGroup(string line)
         {
@@ -72,10 +71,10 @@ namespace VokabelTrainer3.Services
             return false;
         }
 
-        private void RandomizeDictionary(Dictionary<EnglishVocabGroup,GermanVocabGroup> vocabs)
+        private void RandomizeDictionary()
         {
             Random rand = new Random();
-            vocabs = vocabs.OrderBy(x => rand.Next()).ToDictionary(kvp => kvp.Key, kvp => kvp.Value); // kvp = KeyValuePair
+            _vocabs = _vocabs.OrderBy(x => rand.Next()).ToDictionary(kvp => kvp.Key, kvp => kvp.Value); // kvp = KeyValuePair
         }
     }
 

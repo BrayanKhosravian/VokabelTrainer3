@@ -6,7 +6,6 @@ namespace VokabelTrainer3.Interfaces
 {
     public interface IDirectoryService
     {
-        void CreateDirectoryHirarchy();
-        string GetLastDirectoryName(string path);
+        string GetLastDirectoryName(string directory);
     }
 }

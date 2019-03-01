@@ -17,19 +17,22 @@ using VokabelTrainer3.Interfaces;
 
 namespace VokabelTrainer3.Droid.Services
 {
-    class FileService : IFileService
+    internal class FileService
     {
+        private static bool _executed = false;
         private readonly Assembly _assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
         private readonly ITextFileParser _textFileParser;
 
-        public FileService(ITextFileParser textFileParser)
+        internal FileService(ITextFileParser textFileParser)
         {
             _textFileParser = textFileParser;
 
         }
 
-        public void CreateTextFileHirarchy()
+        internal void CreateTextFileHirarchy()
         {
+            if (_executed) return;
+
             foreach (var resource in _assembly.GetManifestResourceNames())
             {
                 if (_textFileParser.PathContains(resource, "Basic"))
@@ -65,6 +68,7 @@ namespace VokabelTrainer3.Droid.Services
                 }
             }
 
+            _executed = true;
         }
 
         private void ResourceWriter(string path, string resource)

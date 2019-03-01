@@ -16,8 +16,12 @@ namespace VokabelTrainer3.Droid.Services
 {
     public class DirectoryService : IDirectoryService
     {
-        public void CreateDirectoryHirarchy()
+        private static bool _executed = false;
+
+        internal void CreateDirectoryHirarchy()
         {
+            if(_executed) return;
+
             this.CreateDirectory(Paths.RootPath);
             this.CreateDirectory(Paths.BasicVocabsPath);
             this.CreateDirectory(Paths.AdvancedVocabsPath);
@@ -28,6 +32,8 @@ namespace VokabelTrainer3.Droid.Services
             {
                 this.CreateDirectory(path);
             }
+
+            _executed = true;
         }
 
         public string GetLastDirectoryName(string path)

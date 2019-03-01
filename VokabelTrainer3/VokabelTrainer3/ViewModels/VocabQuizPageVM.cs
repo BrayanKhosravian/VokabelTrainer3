@@ -13,6 +13,10 @@ namespace VokabelTrainer3.ViewModels
     class VocabQuizPageVM : BaseVM
     {
         private Dictionary<EnglishVocabGroup, GermanVocabGroup> _vocabs = new Dictionary<EnglishVocabGroup, GermanVocabGroup>();
+        private EnglishVocabGroup _selEnglishVocabGroup;
+        private GermanVocabGroup _selGermanVocabGroup;
+
+        private int _routine = 0;
 
         private string _outputLabel;
         private string _inputEntry;
@@ -30,18 +34,61 @@ namespace VokabelTrainer3.ViewModels
 
         public ICommand Command_Next => new Command(NextVocab);
 
-        public void GenerateDictionary(string path)
+        public void ConfgureData(string path)
         {
             _vocabs = _vocabularyParserService.GetRandomizedVocabDictionary(path);
+            _selGermanVocabGroup = GetGermanVocabGroup(_routine);
+            _selEnglishVocabGroup = GetEnglishVocabGroup(_routine);
+            this.OutputLabel = _selGermanVocabGroup.Vocab1 + _selGermanVocabGroup.Vocab2 + _selGermanVocabGroup.Vocab3;
         }
 
         private void NextVocab()
         {
+            string input = this.InputEntry;
+            bool isCorrect = this.CheckVocab(input);
+            if (isCorrect)
+            {
+                this.StatsCorrectVocabs++;
+            }
+            else
+            {
+                this.StatsIncorrectVocabs++;
+            }
 
+            _routine++;
+            this.SelectNextVocabs();
         }
 
+        private void SelectNextVocabs()
+        {
+            _selEnglishVocabGroup = this.GetEnglishVocabGroup(_routine);
+            _selGermanVocabGroup = this.GetGermanVocabGroup(_routine);
+            this.OutputLabel = _selGermanVocabGroup.Vocab1 + _selGermanVocabGroup.Vocab2 + _selGermanVocabGroup.Vocab3;
+        }
+
+        private bool CheckVocab(string input)
+        {
+            if (input == _selEnglishVocabGroup.Vocab1 || input == _selEnglishVocabGroup.Vocab2 ||
+                input == _selEnglishVocabGroup.Vocab3)
+            {
+                return true;
+            }
+
+            return false;
+        }
         
 
+        private EnglishVocabGroup GetEnglishVocabGroup(int elementAt)
+        {
+            EnglishVocabGroup vocabGroup = _vocabs.ElementAt(elementAt).Key;
+            return vocabGroup;
+        }
+
+        private GermanVocabGroup GetGermanVocabGroup(int elementAt)
+        {
+            GermanVocabGroup vocabGroup = _vocabs.ElementAt(elementAt).Value;
+            return vocabGroup;
+        }
 
         #region I/O Properties
 
@@ -64,25 +111,25 @@ namespace VokabelTrainer3.ViewModels
         public int StatsTotalVocabs
         {
             get => _statsTotalVocabs;
-            set => base.SetProperty(ref _statsTotalVocabs, value);
+            private set => base.SetProperty(ref _statsTotalVocabs, value);
         }
 
         public int StatsFinishedVocabs
         {
             get => _statsFinishedVocabs;
-            set => base.SetProperty(ref _statsFinishedVocabs, value);
+            private set => base.SetProperty(ref _statsFinishedVocabs, value);
         }
 
         public int StatsCorrectVocabs
         {
             get => _statsCorrectVocabs;
-            set => base.SetProperty(ref _statsCorrectVocabs, value);
+            private set => base.SetProperty(ref _statsCorrectVocabs, value);
         }
 
         public int StatsIncorrectVocabs
         {
             get => _statsIncorrectVocabs;
-            set => base.SetProperty(ref _statsIncorrectVocabs, value);
+            private set => base.SetProperty(ref _statsIncorrectVocabs, value);
         }
 
         #endregion
