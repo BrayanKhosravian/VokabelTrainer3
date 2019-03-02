@@ -19,6 +19,11 @@ namespace VokabelTrainer3.Services
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 
+        public async Task NavigationPopToRootAsync()
+        {
+            await Application.Current.MainPage.Navigation.PopToRootAsync();
+        }
+
         public async Task DisplayAlert(string title, string message, string cancel)
         {
             await Application.Current.MainPage.DisplayAlert(title, message, cancel);

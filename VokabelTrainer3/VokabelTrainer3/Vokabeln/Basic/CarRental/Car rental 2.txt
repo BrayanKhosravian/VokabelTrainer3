@@ -33,7 +33,7 @@ storage space::Stauraum
 suede::Rauhleder
 suit::passen
 surcharge::Zusatzgebühr
-sustain::aushalten/aufrechtrhalten
+sustain::aushalten/aufrechterhalten
 theft::Diebstahl
 ticket::Strafmandat
 transmission::Getriebe

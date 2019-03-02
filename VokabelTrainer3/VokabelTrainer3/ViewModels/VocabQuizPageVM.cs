@@ -43,22 +43,62 @@ namespace VokabelTrainer3.ViewModels
             _vocabs = _vocabularyParserService.GetRandomizedVocabDictionary(path);
             _selGermanVocabGroup = GetGermanVocabGroup(_routine);
             _selEnglishVocabGroup = GetEnglishVocabGroup(_routine);
-            this.OutputLabel = _selGermanVocabGroup.Vocab1 + _selGermanVocabGroup.Vocab2 + _selGermanVocabGroup.Vocab3;
+            this.OutputLabel = _selGermanVocabGroup.ToString();
             this.StatsTotalVocabs = _vocabs.Count;
         }
 
+
+        // check vocab
+
+        // 1.) check input is null if true make DisplayAlert and return
+        // 2.) check if input matches one of each vocabs (replace spaces)
+        // 3.) increment _routine
+        // 4.) check if all vocabs finished (if yes navigate to root page) (maybe save to database)
+        // 5.) select next vocabs
+
         private async Task NextVocab()
         {
-            this.CheckVocab();
-            _routine++;
+            string input = this.InputEntry?.ToLower().Replace(" ", "");
+
+            if (string.IsNullOrEmpty(input))
+            {
+                bool isSkipping = await _pageService.DisplayAlert(" Status", " Your input is empty! \n Do you want to skip?", "YES", "NO");
+                if (isSkipping)
+                {
+                    await this.SelectNextVocabs();
+                    this.OutputLabel = _selGermanVocabGroup.ToString();
+                    this.InputEntry = "";
+                    this.StatsFinishedVocabs++;
+                    this.StatsIncorrectVocabs++;
+                    _routine++;
+                    await _pageService.DisplayAlert(" Status", $" The correct vocab should be: \n\n {_selEnglishVocabGroup.ToString()}", "OK");
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            if (_selEnglishVocabGroup.Any(x => x == input))  // correct input
+            {
+                await _pageService.DisplayAlert(" Status", " The input is correct!", "ok");
+                this.InputEntry = "";
+                this.StatsFinishedVocabs++;
+                this.StatsCorrectVocabs++;
+                _routine++;
+            }
+            else                                        // wrong input
+            {
+                await _pageService.DisplayAlert(" Status", $" The input was wrong! \n It should be: \n\n {_selEnglishVocabGroup.ToString()}", "OK");
+                this.InputEntry = "";
+                this.StatsFinishedVocabs++;
+                this.StatsIncorrectVocabs++;
+                _routine++;
+            }
+
             await this.SelectNextVocabs();
-
-            // 1.) check input is null if true make DisplayAlert and return
-            // 2.) check if input matches one of each vocabs (replace spaces)
-            // 3.) increment _routine
-            // 4.) check if all vocabs finished (if yes navigate to root page) (maybe save to database)
-            // 5.) select next vocabs
-
+            this.OutputLabel = _selGermanVocabGroup.ToString();
 
         }
 
@@ -81,24 +121,17 @@ namespace VokabelTrainer3.ViewModels
             if (_routine >= _vocabs.Count)
             {
                 await _pageService.DisplayAlert("Status", "You completed the quiz!", "ok");
-                return;
+                await _pageService.NavigationPopToRootAsync();
             }
             _selEnglishVocabGroup = this.GetEnglishVocabGroup(_routine);
             _selGermanVocabGroup = this.GetGermanVocabGroup(_routine);
-            this.OutputLabel = _selGermanVocabGroup.Vocab1 + _selGermanVocabGroup.Vocab2 + _selGermanVocabGroup.Vocab3;
         }
 
         private bool IsVocabCorrect(string input)
         {
-            string vocab1, vocab2, vocab3;
-
-            vocab1 = _selEnglishVocabGroup.Vocab1?.Replace(" ", "");
-            vocab2 = _selEnglishVocabGroup.Vocab2?.Replace(" ", "");
-            vocab3 = _selEnglishVocabGroup.Vocab3?.Replace(" ", "");
-
-            if ((bool)vocab1?.Contains(input) || (bool)vocab2?.Contains(input) || (bool)vocab3?.Contains(input))
+            foreach (var vocab in _vocabs)
             {
-                return true;
+                
             }
 
             return false;

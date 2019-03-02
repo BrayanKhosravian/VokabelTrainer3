@@ -36,33 +36,24 @@ namespace VokabelTrainer3.Services
 
         private EnglishVocabGroup GetEnglishVocabGroup(string line)
         {
-            EnglishVocabGroup vocabGroup = new EnglishVocabGroup();
 
             var temp = line.Split("::".ToCharArray())[0];   // get left side of "::"
             var englishVocabs = temp.Split("/".ToCharArray());
 
-            this.ConfigureVocabGroup(vocabGroup, englishVocabs);
+            EnglishVocabGroup vocabGroup = new EnglishVocabGroup(englishVocabs);
+
             return vocabGroup;
         }
 
         private GermanVocabGroup GetGermanVocabGroup(string line)
         {
-            GermanVocabGroup vocabGroup = new GermanVocabGroup();
 
             var temp = line.Split("::".ToCharArray())[2];   // get right side of "::"
             var germanVocabs = temp.Split("/".ToCharArray());
 
-            this.ConfigureVocabGroup(vocabGroup, germanVocabs);
+            GermanVocabGroup vocabGroup = new GermanVocabGroup(germanVocabs);
 
-            return vocabGroup;
-        }
-
-        private void ConfigureVocabGroup(Vocab vocabGroup, string[] vocabs)
-        {
-           
-            if (vocabs.Length >= 1) if (!string.IsNullOrEmpty(vocabs[0])) vocabGroup.Vocab1 = vocabs[0];
-            if (vocabs.Length >= 2) if (!string.IsNullOrEmpty(vocabs[1])) vocabGroup.Vocab1 = vocabs[1];
-            if (vocabs.Length >= 3) if (!string.IsNullOrEmpty(vocabs[2])) vocabGroup.Vocab3 = vocabs[2];
+            return vocabGroup as GermanVocabGroup;
         }
 
         private bool IsUsingFormat(string line, string match)

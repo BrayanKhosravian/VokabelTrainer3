@@ -30,6 +30,7 @@ namespace VokabelTrainer3.Views
         protected override void OnAppearing()
         {
             (BindingContext as VocabQuizPageVM)?.ConfgureViewModel(_chapterPath);
+           
         }
     }
 }

@@ -1,13 +1,42 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace VokabelTrainer3.Models
 {
-    class Vocab
+    abstract class Vocab : IEnumerable<string>
     {
-        public string Vocab1 { get; set; }
-        public string Vocab2 { get; set; }
-        public string Vocab3 { get; set; }
+        public IEnumerable<string> Words { get; private set; } = new List<string>();
+
+        protected Vocab(string[] words)
+        {
+            if (words?.Length <= 0) throw new IndexOutOfRangeException();
+            Words = new List<string>(AddVocabs(words));
+        }
+
+        public override string ToString()
+        {
+            string output = "";
+
+            foreach (var vocab in Words)
+            {
+                output += vocab;
+                output += " / ";
+            }
+
+            output = output.Remove(output.Length - 3, 3);
+
+            return output;
+        }
+
+        private IEnumerable<string> AddVocabs(string[] words)
+        {
+            return Words.Concat(words.AsEnumerable());
+        }
+
+        public IEnumerator<string> GetEnumerator() => Words.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

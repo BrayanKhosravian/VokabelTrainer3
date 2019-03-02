@@ -6,7 +6,8 @@ namespace VokabelTrainer3.Models
 {
     class EnglishVocabGroup : Vocab
     {
-       
-
+        public EnglishVocabGroup(string[] words) : base(words)
+        {
+        }
     }
 }
