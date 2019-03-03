@@ -34,6 +34,14 @@ namespace VokabelTrainer3.Services
             return await Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
         }
 
+        /// <summary>
+        /// Some parametes can be null when u dont want them to be active or displayed
+        /// </summary>
+        /// <param name="title"> cannot be null</param>
+        /// <param name="cancel"> can be a nullable type</param>
+        /// <param name="destruction">can be a nullable type</param>
+        /// <param name="buttons"> cannot be null</param>
+        /// <returns></returns>
         public async Task<string> DisplayActionSheet(string title, string cancel, string destruction, params string[] buttons)
         {
             if(buttons?.Length < 0) throw new IndexOutOfRangeException();
