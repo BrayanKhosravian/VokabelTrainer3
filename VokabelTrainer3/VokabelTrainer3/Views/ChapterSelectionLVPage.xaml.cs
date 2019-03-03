@@ -13,17 +13,17 @@ using Xamarin.Forms.Xaml;
 namespace VokabelTrainer3.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChapterSelectionListViewPage : ContentPage
+    public partial class ChapterSelectionLVPage : ContentPage
     {
 
-        public ChapterSelectionListViewPage()
+        public ChapterSelectionLVPage()
         {
             InitializeComponent();
         }
 
         protected override void OnAppearing()
         {
-            var vm = (BindingContext as ChapterSelectionListViewPageVM);
+            var vm = (BindingContext as ChapterSelectionLVPageVM);
             vm?.CreateData();
             vm?.CreateChapters();
         }

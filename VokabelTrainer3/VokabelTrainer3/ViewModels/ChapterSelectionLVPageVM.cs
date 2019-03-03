@@ -16,7 +16,7 @@ using Xamarin.Forms.Internals;
 
 namespace VokabelTrainer3.ViewModels
 {
-    class ChapterSelectionListViewPageVM : BaseVM
+    class ChapterSelectionLVPageVM : BaseVM
     {
         public ObservableCollection<ChapterGroup> Chapters { get; private set; } = new ObservableCollection<ChapterGroup>();
         private readonly List<ChapterGroup> _data = new List<ChapterGroup>();
@@ -39,7 +39,7 @@ namespace VokabelTrainer3.ViewModels
         private readonly IDirectoryService _directoryService;
         private readonly string _path;
 
-        public ChapterSelectionListViewPageVM(INavigatorService navigatorService, IDirectoryService directoryService, string path)
+        public ChapterSelectionLVPageVM(INavigatorService navigatorService, IDirectoryService directoryService, string path)
         {
             _navigatorService = navigatorService;
             _directoryService = directoryService;
@@ -71,7 +71,7 @@ namespace VokabelTrainer3.ViewModels
 
         public ICommand ChapterSelectedCommand => new Command<string>(async chapterPath =>
         {
-            await _navigatorService.PushWithParameterAsync<VocabQuizPageVM>(new NamedParameter("chapterPath" , chapterPath));
+            await _navigatorService.PushWithParameterAsync<QuizPageVM>(new NamedParameter("chapterPath" , chapterPath));
         });
 
         public void CreateData()

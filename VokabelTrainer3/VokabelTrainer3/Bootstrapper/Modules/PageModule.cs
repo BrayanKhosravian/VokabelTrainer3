@@ -14,11 +14,11 @@ namespace VokabelTrainer3.Bootstrapper.Modules
             builder.RegisterType<WelcomePage>();
             builder.RegisterType<WelcomePageVM>();
 
-            builder.RegisterType<ChapterSelectionListViewPage>();
-            builder.RegisterType<ChapterSelectionListViewPageVM>();
+            builder.RegisterType<ChapterSelectionLVPage>();
+            builder.RegisterType<ChapterSelectionLVPageVM>();
 
-            builder.RegisterType<VocabQuizPage>();
-            builder.RegisterType<VocabQuizPageVM>();
+            builder.RegisterType<QuizPage>();
+            builder.RegisterType<QuizPageVM>();
         }
     }
 }

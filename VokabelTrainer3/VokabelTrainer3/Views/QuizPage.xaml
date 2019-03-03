@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:VokabelTrainer3.Views.Converters;assembly=VokabelTrainer3"
-             x:Class="VokabelTrainer3.Views.VocabQuizPage">
+             x:Class="VokabelTrainer3.Views.QuizPage">
     
     <ContentPage.Resources>
         <ResourceDictionary>

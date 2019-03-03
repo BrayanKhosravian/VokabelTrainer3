@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace VokabelTrainer3.ViewModels
 {
-    class VocabQuizPageVM : BaseVM
+    class QuizPageVM : BaseVM
     {
         private Dictionary<EnglishVocabGroup, GermanVocabGroup> _vocabs = new Dictionary<EnglishVocabGroup, GermanVocabGroup>();
         private EnglishVocabGroup _selEnglishVocabGroup;
@@ -32,7 +32,7 @@ namespace VokabelTrainer3.ViewModels
         private readonly IPageService _pageService;
         private readonly string _chapterPath;
 
-        public VocabQuizPageVM(IVocabularyParserService vocabularyParserService, INavigatorService navigatorService, IPageService pageService, string chapterPath)
+        public QuizPageVM(IVocabularyParserService vocabularyParserService, INavigatorService navigatorService, IPageService pageService, string chapterPath)
         {
             _navigatorService = navigatorService;
             _vocabularyParserService = vocabularyParserService;
@@ -69,13 +69,14 @@ namespace VokabelTrainer3.ViewModels
                 bool isSkipping = await _pageService.DisplayAlert(" Status", " Your input is empty! \n Do you want to skip?", "YES", "NO");
                 if (isSkipping)
                 {
+                    await _pageService.DisplayAlert(" Status", $" The correct vocab should be: \n\n {_selEnglishVocabGroup.ToString()}", "OK");
+
+                    // _routine++;
                     await this.SelectNextVocabs();
                     this.OutputLabel = _selGermanVocabGroup.ToString();
                     this.InputEntry = "";
                     this.StatsFinishedVocabs++;
                     this.StatsIncorrectVocabs++;
-                    _routine++;
-                    await _pageService.DisplayAlert(" Status", $" The correct vocab should be: \n\n {_selEnglishVocabGroup.ToString()}", "OK");
                     return;
                 }
                 else
@@ -90,7 +91,7 @@ namespace VokabelTrainer3.ViewModels
                 this.InputEntry = "";
                 this.StatsFinishedVocabs++;
                 this.StatsCorrectVocabs++;
-                _routine++;
+                // _routine++;
             }
             else                                        // wrong input
             {
@@ -98,7 +99,7 @@ namespace VokabelTrainer3.ViewModels
                 this.InputEntry = "";
                 this.StatsFinishedVocabs++;
                 this.StatsIncorrectVocabs++;
-                _routine++;
+                // _routine++;
             }
 
             await this.SelectNextVocabs();
@@ -106,41 +107,17 @@ namespace VokabelTrainer3.ViewModels
 
         }
 
-        private void CheckVocab()
-        {
-            string input = this.InputEntry;
-            bool isCorrect = this.IsVocabCorrect(input);
-            if (isCorrect)
-            {
-                this.StatsCorrectVocabs++;
-            }
-            else
-            {
-                this.StatsIncorrectVocabs++;
-            }
-        }
-
         private async Task SelectNextVocabs()
         {
+            _routine++;
             if (_routine >= _vocabs.Count)
             {
                 await _pageService.DisplayAlert("Status", "You completed the quiz!", "ok");
-                await _pageService.NavigationPopToRootAsync();
+                await _navigatorService.PopToRootAsync();
             }
             _selEnglishVocabGroup = this.GetEnglishVocabGroup(_routine);
             _selGermanVocabGroup = this.GetGermanVocabGroup(_routine);
         }
-
-        private bool IsVocabCorrect(string input)
-        {
-            foreach (var vocab in _vocabs)
-            {
-                
-            }
-
-            return false;
-        }
-        
 
         private EnglishVocabGroup GetEnglishVocabGroup(int elementAt)
         {

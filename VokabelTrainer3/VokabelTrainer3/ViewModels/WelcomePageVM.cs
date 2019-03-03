@@ -29,7 +29,7 @@ namespace VokabelTrainer3.ViewModels
 
         private async void ToChapterSelectionListView(string path)
         {
-            await _navigatorService.PushWithParameterAsync<ChapterSelectionListViewPageVM>(new NamedParameter("path", path));
+            await _navigatorService.PushWithParameterAsync<ChapterSelectionLVPageVM>(new NamedParameter("path", path));
         }
     }
 }

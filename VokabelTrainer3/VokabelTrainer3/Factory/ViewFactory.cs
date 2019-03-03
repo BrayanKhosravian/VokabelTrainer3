@@ -23,7 +23,7 @@ namespace VokabelTrainer3.Factory
             where TViewModel : BaseVM 
             where TView : Page
         {
-            foreach (var kvp in _map)
+            foreach (var kvp in _map)   // aggregate root pattern
             {
                 if (kvp.Key == typeof(TViewModel) || kvp.Value == typeof(TView))
                 {
@@ -32,12 +32,6 @@ namespace VokabelTrainer3.Factory
             }
 
             _map[typeof(TViewModel)] = typeof(TView);
-        }
-
-        private void ThrowDublicateViewRegisteredException()
-        {
-            throw new DublicateViewRegisteredException("You accidentally registered a already registered View or ViewModel \n" +
-                                                       "Cannot register a already Registered View or ViewModel of the same type");
         }
 
         public Page Resolve<TViewModel>() 
@@ -79,6 +73,12 @@ namespace VokabelTrainer3.Factory
             Type viewType = _map[typeof(TViewModel)];
             Page view = _componentContext.Resolve(viewType) as Page;
             return view;
+        }
+
+        private void ThrowDublicateViewRegisteredException()
+        {
+            throw new DublicateViewRegisteredException("You accidentally registered a already registered View or ViewModel \n" +
+                                                       "Cannot register a already Registered View or ViewModel of the same type");
         }
     }
 }

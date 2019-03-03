@@ -10,24 +10,24 @@ using Xamarin.Forms.Xaml;
 namespace VokabelTrainer3.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class VocabQuizPage : ContentPage
+    public partial class QuizPage : ContentPage
     {
         private readonly string _chapterPath;
-        public VocabQuizPage(string chapterPath)
+        public QuizPage(string chapterPath)
         {
             InitializeComponent();
 
             _chapterPath = chapterPath;
         }
 
-        public VocabQuizPage()
+        public QuizPage()
         {
             InitializeComponent();
         }
 
         protected override void OnAppearing()
         {
-            (BindingContext as VocabQuizPageVM)?.ConfgureViewModel();
+            (BindingContext as QuizPageVM)?.ConfgureViewModel();
            
         }
     }

@@ -71,10 +71,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\ChapterSelectionListViewPage.xaml">
+    <Compile Update="Views\ChapterSelectionLVPage.xaml.cs">
+      <DependentUpon>ChapterSelectionLVPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DisplayVocabsLVPage.xaml.cs">
+      <DependentUpon>DisplayVocabsLVPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\QuizPage.xaml.cs">
+      <DependentUpon>QuizPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ChapterSelectionLVPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\VocabQuizPage.xaml">
+    <EmbeddedResource Update="Views\DisplayVocabsLVPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\QuizPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\WelcomePage.xaml">
