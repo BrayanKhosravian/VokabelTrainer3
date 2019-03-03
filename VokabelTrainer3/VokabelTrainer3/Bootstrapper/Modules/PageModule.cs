@@ -19,6 +19,9 @@ namespace VokabelTrainer3.Bootstrapper.Modules
 
             builder.RegisterType<QuizPage>();
             builder.RegisterType<QuizPageVM>();
+
+            builder.RegisterType<DisplayVocabsLVPage>();
+            builder.RegisterType<DisplayVocabsLVPageVM>();
         }
     }
 }
