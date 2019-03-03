@@ -26,7 +26,7 @@ namespace VokabelTrainer3.Models
                 output += " / ";
             }
 
-            output = output.Remove(output.Length - 3, 3);
+            output = output.Remove(output.Length - 3, 3); // removes last " / "
 
             return output;
         }

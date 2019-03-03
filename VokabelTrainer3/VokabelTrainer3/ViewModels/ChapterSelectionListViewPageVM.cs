@@ -18,7 +18,7 @@ namespace VokabelTrainer3.ViewModels
     {
         public ObservableCollection<ChapterGroup> Chapters { get; private set; } = new ObservableCollection<ChapterGroup>();
         private readonly List<ChapterGroup> _data = new List<ChapterGroup>();
-        // comment is to provided a knowledge on how _data looks like
+        // comment is to provide a knowledge on how _data looks like
         //private readonly List<ChapterGroup> _data = new List<ChapterGroup>()
         //{
         //    new ChapterGroup("GroupA", "Path")
