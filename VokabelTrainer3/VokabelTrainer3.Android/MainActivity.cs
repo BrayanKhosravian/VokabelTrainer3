@@ -30,7 +30,10 @@ namespace VokabelTrainer3.Droid
             FileService fileService = new FileService(new TextFileParser());
             fileService.CreateTextFileHirarchy();
 
-            LoadApplication(new App(directoryService));
+            App app = new App();
+            app.ConfigureApplication(directoryService);
+
+            LoadApplication(app);
         }
     }
 }

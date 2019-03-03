@@ -12,13 +12,16 @@ namespace VokabelTrainer3
 {
     public partial class App : Application
     {
-        public App(IDirectoryService directoryService)
+        public App()
         {
             InitializeComponent();
 
+        }
+
+        public void ConfigureApplication(IDirectoryService directoryService)
+        {
             var bootstrapper = new Bootstrapper.Bootstrapper(this);
             bootstrapper.Load(directoryService);
-
         }
 
         protected override void OnStart()
