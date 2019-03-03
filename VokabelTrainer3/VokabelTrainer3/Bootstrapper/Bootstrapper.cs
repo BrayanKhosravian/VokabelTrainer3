@@ -45,6 +45,7 @@ namespace VokabelTrainer3.Bootstrapper
             viewFactory.Register<WelcomePageVM, WelcomePage>();
             viewFactory.Register<VocabQuizPageVM, VocabQuizPage>();
             viewFactory.Register<ChapterSelectionListViewPageVM, ChapterSelectionListViewPage>();
+            viewFactory.Register<ChapterSelectionListViewPageVM, ChapterSelectionListViewPage>();
 
             // configure application
             var mainPage = viewFactory.Resolve<WelcomePageVM>();

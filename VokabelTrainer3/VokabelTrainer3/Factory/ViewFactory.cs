@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Autofac;
 using Autofac.Core;
+using VokabelTrainer3.Exceptions;
 using VokabelTrainer3.ViewModels;
 using Xamarin.Forms;
 
@@ -22,7 +23,21 @@ namespace VokabelTrainer3.Factory
             where TViewModel : BaseVM 
             where TView : Page
         {
+            foreach (var kvp in _map)
+            {
+                if (kvp.Key == typeof(TViewModel) || kvp.Value == typeof(TView))
+                {
+                    this.ThrowDublicateViewRegisteredException();
+                }
+            }
+
             _map[typeof(TViewModel)] = typeof(TView);
+        }
+
+        private void ThrowDublicateViewRegisteredException()
+        {
+            throw new DublicateViewRegisteredException("You accidentally registered a already registered View or ViewModel \n" +
+                                                       "Cannot register a already Registered View or ViewModel of the same type");
         }
 
         public Page Resolve<TViewModel>() 
