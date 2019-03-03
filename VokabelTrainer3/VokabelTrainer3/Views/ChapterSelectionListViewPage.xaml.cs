@@ -23,6 +23,8 @@ namespace VokabelTrainer3.Views
 
             _path = path;
 
+            Navigation.
+
             BindingContext = ViewModelLocator.Resolve<ChapterSelectionListViewPageVM>();
         }
 

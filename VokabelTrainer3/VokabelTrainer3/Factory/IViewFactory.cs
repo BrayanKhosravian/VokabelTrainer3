@@ -15,13 +15,13 @@ namespace VokabelTrainer3.Factory
             where TViewModel : BaseVM
             where TView : Page;
 
-        void Resolve<TViewModel>() 
+        Page Resolve<TViewModel>() 
             where TViewModel : BaseVM;
 
-        void ResolveWithParameter<TViewModel>(NamedParameter parameter) 
+        Page ResolveWithParameter<TViewModel>(NamedParameter parameter) 
             where TViewModel : BaseVM;
 
-        void ResolveWithParameters<TViewModel>(params Parameter[] parameters)
+        Page ResolveWithParameters<TViewModel>(params Parameter[] parameters)
             where TViewModel : BaseVM;
     }
 }

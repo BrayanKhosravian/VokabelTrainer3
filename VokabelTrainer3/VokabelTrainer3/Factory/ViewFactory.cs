@@ -25,26 +25,28 @@ namespace VokabelTrainer3.Factory
             _map[typeof(TViewModel)] = typeof(TView);
         }
 
-        public void Resolve<TViewModel>() 
+        public Page Resolve<TViewModel>() 
             where TViewModel : BaseVM
         {
             TViewModel viewModel = _componentContext.Resolve<TViewModel>();
             Page view = GetPage<TViewModel>();
 
             view.BindingContext = viewModel;
+            return view;
         }
 
 
-        public void ResolveWithParameter<TViewModel>(NamedParameter parameter)
+        public Page ResolveWithParameter<TViewModel>(NamedParameter parameter)
             where TViewModel : BaseVM
         {
             TViewModel viewModel = _componentContext.Resolve<TViewModel>(parameter);
             Page view = GetPage<TViewModel>();
 
             view.BindingContext = viewModel;
+            return view;
         }
 
-        public void ResolveWithParameters<TViewModel>(params Parameter[] parameters) 
+        public Page ResolveWithParameters<TViewModel>(params Parameter[] parameters) 
             where TViewModel : BaseVM
         {
             if(parameters?.Length <= 0) throw new IndexOutOfRangeException();
@@ -53,6 +55,7 @@ namespace VokabelTrainer3.Factory
             Page view = GetPage<TViewModel>();
 
             view.BindingContext = viewModel;
+            return view;
         }
 
         private Page GetPage<TViewModel>() 
