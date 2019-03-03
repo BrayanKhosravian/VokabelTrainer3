@@ -15,23 +15,16 @@ namespace VokabelTrainer3.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChapterSelectionListViewPage : ContentPage
     {
-        private readonly string _path;
 
-        public ChapterSelectionListViewPage(string path)
+        public ChapterSelectionListViewPage()
         {
             InitializeComponent();
-
-            _path = path;
-
-            Navigation.
-
-            BindingContext = ViewModelLocator.Resolve<ChapterSelectionListViewPageVM>();
         }
 
         protected override void OnAppearing()
         {
             var vm = (BindingContext as ChapterSelectionListViewPageVM);
-            vm?.CreateData(_path);
+            vm?.CreateData();
             vm?.CreateChapters();
         }
     }

@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Input;
 using Autofac;
 using VokabelTrainer3.Interfaces;
+using VokabelTrainer3.Services;
 using VokabelTrainer3.Views;
 using Xamarin.Forms;
 
@@ -11,28 +12,24 @@ namespace VokabelTrainer3.ViewModels
 {
     public class WelcomePageVM : BaseVM
     {
-        private readonly IPageService _pageService;
+        private readonly INavigatorService _navigatorService;
 
-        public ICommand Command_Options { get; private set; }
-        public ICommand Command_BasicVocabs { get; private set; }
-        public ICommand Command_AdvancedVocabs { get; private set; }
-        public ICommand Command_CustomVocabs { get; private set; }
-        public ICommand Command_Statistics { get; private set; }
-
-        public WelcomePageVM(IPageService pageService)
+        public WelcomePageVM(INavigatorService navigatorService)
         {
-            _pageService = pageService;
+            _navigatorService = navigatorService;
+        }
 
-            Command_BasicVocabs = new Command<string>(Execute);
-            Command_AdvancedVocabs = new Command<string>(Execute);
-            Command_CustomVocabs = new Command<string>(Execute);
+        public ICommand Command_Options { get; }
 
-            async void Execute(string path)
-            {
-                await _pageService.NavigationPushAsync(new ChapterSelectionListViewPage(path));
-            }
+        public ICommand Command_BasicVocabs    => new Command<string>(ToChapterSelectionListView);
+        public ICommand Command_AdvancedVocabs => new Command<string>(ToChapterSelectionListView);
+        public ICommand Command_CustomVocabs   => new Command<string>(ToChapterSelectionListView);
 
+        public ICommand Command_Statistics { get; }
 
+        private async void ToChapterSelectionListView(string path)
+        {
+            await _navigatorService.PushWithParameterAsync<ChapterSelectionListViewPageVM>(new NamedParameter("path", path));
         }
     }
 }

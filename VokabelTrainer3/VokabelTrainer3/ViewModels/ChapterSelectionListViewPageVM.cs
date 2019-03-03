@@ -6,8 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Autofac;
 using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
+using VokabelTrainer3.Services;
 using VokabelTrainer3.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -33,13 +35,15 @@ namespace VokabelTrainer3.ViewModels
         //    }
         //};    
 
-        private readonly IPageService _pageService;
+        private readonly INavigatorService _navigatorService;
         private readonly IDirectoryService _directoryService;
+        private readonly string _path;
 
-        public ChapterSelectionListViewPageVM(IPageService pageService, IDirectoryService directoryService)
+        public ChapterSelectionListViewPageVM(INavigatorService navigatorService, IDirectoryService directoryService, string path)
         {
-            _pageService = pageService;
+            _navigatorService = navigatorService;
             _directoryService = directoryService;
+            _path = path;
         }
 
         public ICommand GroupSelectedCommand
@@ -67,13 +71,13 @@ namespace VokabelTrainer3.ViewModels
 
         public ICommand ChapterSelectedCommand => new Command<string>(async chapterPath =>
         {
-            await _pageService.NavigationPushAsync(new VocabQuizPage(chapterPath));
+            await _navigatorService.PushWithParameterAsync<VocabQuizPageVM>(new NamedParameter("chapterPath" , chapterPath));
         });
 
-        public void CreateData(string path)
+        public void CreateData()
         {
             _data.Clear();
-            var directories = Directory.GetDirectories(path);
+            var directories = Directory.GetDirectories(_path);
             foreach (var directory in directories)
             {
                 var chapterGroup = new ChapterGroup(_directoryService.GetLastDirectoryName(directory), directory);

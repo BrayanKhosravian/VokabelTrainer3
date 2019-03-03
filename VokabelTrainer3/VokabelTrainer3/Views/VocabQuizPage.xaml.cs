@@ -18,8 +18,6 @@ namespace VokabelTrainer3.Views
             InitializeComponent();
 
             _chapterPath = chapterPath;
-
-            BindingContext = ViewModelLocator.Resolve<VocabQuizPageVM>();
         }
 
         public VocabQuizPage()
@@ -29,7 +27,7 @@ namespace VokabelTrainer3.Views
 
         protected override void OnAppearing()
         {
-            (BindingContext as VocabQuizPageVM)?.ConfgureViewModel(_chapterPath);
+            (BindingContext as VocabQuizPageVM)?.ConfgureViewModel();
            
         }
     }

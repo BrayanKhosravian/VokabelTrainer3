@@ -28,19 +28,23 @@ namespace VokabelTrainer3.ViewModels
         private int _statsIncorrectVocabs;
 
         private readonly IVocabularyParserService _vocabularyParserService;
+        private readonly INavigatorService _navigatorService;
         private readonly IPageService _pageService;
+        private readonly string _chapterPath;
 
-        public VocabQuizPageVM(IVocabularyParserService vocabularyParserService, IPageService pageService)
+        public VocabQuizPageVM(IVocabularyParserService vocabularyParserService, INavigatorService navigatorService, IPageService pageService, string chapterPath)
         {
+            _navigatorService = navigatorService;
             _vocabularyParserService = vocabularyParserService;
             _pageService = pageService;
+            _chapterPath = chapterPath;
         }
 
         public ICommand Command_Next => new Command(async () => await NextVocab());
 
-        public void ConfgureViewModel(string path)
+        public void ConfgureViewModel()
         {
-            _vocabs = _vocabularyParserService.GetRandomizedVocabDictionary(path);
+            _vocabs = _vocabularyParserService.GetRandomizedVocabDictionary(_chapterPath);
             _selGermanVocabGroup = GetGermanVocabGroup(_routine);
             _selEnglishVocabGroup = GetEnglishVocabGroup(_routine);
             this.OutputLabel = _selGermanVocabGroup.ToString();

@@ -8,7 +8,7 @@ using VokabelTrainer3.ViewModels;
 
 namespace VokabelTrainer3.Services
 {
-    interface INavigatorService
+    public interface INavigatorService
     {
         Task PopAsync();
         Task PopToRootAsync();
