@@ -33,5 +33,11 @@ namespace VokabelTrainer3.Services
         {
             return await Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
         }
+
+        public async Task<string> DisplayActionSheet(string title, string cancel, string destruction, params string[] buttons)
+        {
+            if(buttons?.Length < 0) throw new IndexOutOfRangeException();
+            return await Application.Current.MainPage.DisplayActionSheet(title,cancel,destruction,buttons);
+        }
     }
 }
