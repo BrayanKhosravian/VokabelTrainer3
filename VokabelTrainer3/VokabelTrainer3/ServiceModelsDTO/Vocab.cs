@@ -2,9 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace VokabelTrainer3.Models
+namespace VokabelTrainer3.ServiceModelsDTO
 {
     abstract class Vocab : IEnumerable<string>
     {

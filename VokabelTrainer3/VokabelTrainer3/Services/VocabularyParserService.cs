@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
+using VokabelTrainer3.ServiceModelsDTO;
 
 namespace VokabelTrainer3.Services
 {

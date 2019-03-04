@@ -35,12 +35,14 @@ namespace VokabelTrainer3.ViewModels
         //    }
         //};    
 
+        private readonly IPageService _pageService;
         private readonly INavigatorService _navigatorService;
         private readonly IDirectoryService _directoryService;
         private readonly string _path;
 
-        public ChapterSelectionLVPageVM(INavigatorService navigatorService, IDirectoryService directoryService, string path)
+        public ChapterSelectionLVPageVM(IPageService pageService, INavigatorService navigatorService, IDirectoryService directoryService, string path)
         {
+            _pageService = pageService;
             _navigatorService = navigatorService;
             _directoryService = directoryService;
             _path = path;
@@ -71,7 +73,19 @@ namespace VokabelTrainer3.ViewModels
 
         public ICommand ChapterSelectedCommand => new Command<string>(async chapterPath =>
         {
-            await _navigatorService.PushWithParameterAsync<QuizPageVM>(new NamedParameter("chapterPath" , chapterPath));
+            string decision = await _pageService.DisplayActionSheet("Make a decision", "Cancel",null, new []{"Take Quiz", "Read/Learn vocabularies" });
+            switch (decision)
+            {
+                case "Take Quiz":
+                    await _navigatorService.PushWithParameterAsync<QuizPageVM>(new NamedParameter("chapterPath", chapterPath));
+                    break;
+                case "Read/Learn vocabularies":
+                    await _navigatorService.PushWithParameterAsync<DisplayVocabsLVPageVM>(new NamedParameter("chapterPath", chapterPath));
+                    break;
+                case "Cancel":
+                    return;
+                default: return;       
+            }
         });
 
         public void CreateData()

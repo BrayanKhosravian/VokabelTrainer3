@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VokabelTrainer3.Models
+﻿namespace VokabelTrainer3.ServiceModelsDTO
 {
     class EnglishVocabGroup : Vocab
     {

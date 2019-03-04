@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
+using VokabelTrainer3.ServiceModelsDTO;
 using VokabelTrainer3.Services;
 using Xamarin.Forms;
 
