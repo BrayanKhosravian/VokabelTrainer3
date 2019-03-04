@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using System.Threading.Tasks;
 
-namespace VokabelTrainer3.Interfaces
+namespace VokabelTrainer3.Services
 {
     public interface IPageService
     {

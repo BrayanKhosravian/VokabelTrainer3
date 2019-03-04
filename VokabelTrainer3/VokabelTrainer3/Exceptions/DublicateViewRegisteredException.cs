@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VokabelTrainer3.Exceptions
 {
-    class DublicateViewRegisteredException : Exception
+    class DublicateViewRegisteredException : AggregateException
     {
 
         public DublicateViewRegisteredException() : base()

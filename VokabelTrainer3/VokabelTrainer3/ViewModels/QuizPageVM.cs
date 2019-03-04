@@ -16,6 +16,7 @@ namespace VokabelTrainer3.ViewModels
     class QuizPageVM : BaseVM
     {
         private Dictionary<EnglishVocabGroup, GermanVocabGroup> _vocabs = new Dictionary<EnglishVocabGroup, GermanVocabGroup>();
+        private Dictionary<EnglishVocabGroup, GermanVocabGroup> _wrongVocabs = new Dictionary<EnglishVocabGroup, GermanVocabGroup>();
         private EnglishVocabGroup _selEnglishVocabGroup;
         private GermanVocabGroup _selGermanVocabGroup;
 
@@ -53,59 +54,50 @@ namespace VokabelTrainer3.ViewModels
         }
 
 
-        // check vocab
-
         // 1.) check input is null if true make DisplayAlert and return
         // 2.) check if input matches one of each vocabs (replace spaces)
         // 3.) increment _routine
         // 4.) check if all vocabs finished (if yes navigate to root page) (maybe save to database)
         // 5.) select next vocabs
 
+        private enum InputState { Correct, Incorrect, NullOrEmpty }
+
         private async Task NextVocab()
         {
             string input = this.InputEntry?.ToLower().Replace(" ", "");
 
-            if (string.IsNullOrEmpty(input))
+            InputState inputState = this.CheckInput(input);
+
+            switch (inputState)
             {
-                bool isSkipping = await _pageService.DisplayAlert(" Status", " Your input is empty! \n Do you want to skip?", "YES", "NO");
-                if (isSkipping)
-                {
+                case InputState.NullOrEmpty:
+                    bool isSkipping = await _pageService.DisplayAlert(" Status", " Your input is empty! \n Do you want to skip?", "YES", "NO");
+                    if (!isSkipping) return;
                     await _pageService.DisplayAlert(" Status", $" The correct vocab should be: \n\n {_selEnglishVocabGroup.ToString()}", "OK");
-
-                    // _routine++;
-                    await this.SelectNextVocabs();
-                    this.OutputLabel = _selGermanVocabGroup.ToString();
-                    this.InputEntry = "";
-                    this.StatsFinishedVocabs++;
                     this.StatsIncorrectVocabs++;
-                    return;
-                }
-                else
-                {
-                    return;
-                }
-            }
+                    break;
 
-            if (_selEnglishVocabGroup.Any(x => x == input))  // correct input
-            {
-                await _pageService.DisplayAlert(" Status", " The input is correct!", "ok");
-                this.InputEntry = "";
-                this.StatsFinishedVocabs++;
-                this.StatsCorrectVocabs++;
-                // _routine++;
-            }
-            else                                        // wrong input
-            {
-                await _pageService.DisplayAlert(" Status", $" The input was wrong! \n It should be: \n\n {_selEnglishVocabGroup.ToString()}", "OK");
-                this.InputEntry = "";
-                this.StatsFinishedVocabs++;
-                this.StatsIncorrectVocabs++;
-                // _routine++;
+                case InputState.Correct:
+                    await _pageService.DisplayAlert(" Status", " The input is correct!", "ok");
+                    this.StatsCorrectVocabs++;
+                    break;
+
+                case InputState.Incorrect:
+                    await _pageService.DisplayAlert(" Status", $" The input was wrong! \n It should be: \n\n {_selEnglishVocabGroup.ToString()}", "OK");
+                    this.StatsIncorrectVocabs++;
+                    break;
             }
 
             await this.SelectNextVocabs();
             this.OutputLabel = _selGermanVocabGroup.ToString();
 
+        }
+
+        private InputState CheckInput(string input)
+        {
+            if (string.IsNullOrEmpty(input)) return InputState.NullOrEmpty;
+            else if (_selEnglishVocabGroup.Any(x => x == input)) return InputState.Correct;
+            else return InputState.Incorrect;
         }
 
         private async Task SelectNextVocabs()
@@ -118,6 +110,9 @@ namespace VokabelTrainer3.ViewModels
             }
             _selEnglishVocabGroup = this.GetEnglishVocabGroup(_routine);
             _selGermanVocabGroup = this.GetGermanVocabGroup(_routine);
+
+            this.InputEntry = "";
+            this.StatsFinishedVocabs++;
         }
 
         private EnglishVocabGroup GetEnglishVocabGroup(int elementAt)
