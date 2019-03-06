@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace VokabelTrainer3.ServiceModelsDTO
+namespace VokabelTrainer3.ServiceModels
 {
-    abstract class Vocab : IEnumerable<string>
+    abstract class VocabDTO : IEnumerable<string>
     {
         public IEnumerable<string> Words { get; private set; } = new List<string>();
 
-        protected Vocab(string[] words)
+        protected VocabDTO(string[] words)
         {
             if (words?.Length <= 0) throw new IndexOutOfRangeException();
             Words = new List<string>(AddVocabs(words));

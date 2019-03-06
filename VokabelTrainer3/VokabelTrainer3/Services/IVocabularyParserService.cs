@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using VokabelTrainer3.Models;
-using VokabelTrainer3.ServiceModelsDTO;
+using VokabelTrainer3.ServiceModels;
 
 namespace VokabelTrainer3.Services
 {
     interface IVocabularyParserService
     {
-        Dictionary<EnglishVocabGroup, GermanVocabGroup> GetRandomizedVocabDictionary(string path);
+        Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO> GetRandomizedVocabDictionary(string path);
+        ObservableCollection<Vocabulary> GetVocabularyForView(string path);
     }
 }
 

@@ -24,8 +24,7 @@ namespace VokabelTrainer3.Views
         protected override void OnAppearing()
         {
             var vm = (BindingContext as ChapterSelectionLVPageVM);
-            vm?.CreateData();
-            vm?.CreateChapters();
+            vm?.ConfigureViewModel();
         }
     }
 }

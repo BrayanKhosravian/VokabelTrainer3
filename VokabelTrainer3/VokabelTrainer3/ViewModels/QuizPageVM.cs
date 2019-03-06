@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Autofac;
 using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
-using VokabelTrainer3.ServiceModelsDTO;
+using VokabelTrainer3.ServiceModels;
 using VokabelTrainer3.Services;
 using Xamarin.Forms;
 
@@ -15,10 +16,10 @@ namespace VokabelTrainer3.ViewModels
 {
     class QuizPageVM : BaseVM
     {
-        private Dictionary<EnglishVocabGroup, GermanVocabGroup> _vocabs = new Dictionary<EnglishVocabGroup, GermanVocabGroup>();
-        private Dictionary<EnglishVocabGroup, GermanVocabGroup> _wrongVocabs = new Dictionary<EnglishVocabGroup, GermanVocabGroup>();
-        private EnglishVocabGroup _selEnglishVocabGroup;
-        private GermanVocabGroup _selGermanVocabGroup;
+        private Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO> _vocabs = new Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO>();
+        private List<Vocabulary> _wrongVocabs = new List<Vocabulary>();
+        private EnglishVocabGroupDTO _selEnglishVocabGroupDto;
+        private GermanVocabGroupDTO _selGermanVocabGroupDto;
 
         private int _routine = 0;
 
@@ -47,9 +48,9 @@ namespace VokabelTrainer3.ViewModels
         public void ConfgureViewModel()
         {
             _vocabs = _vocabularyParserService.GetRandomizedVocabDictionary(_chapterPath);
-            _selGermanVocabGroup = GetGermanVocabGroup(_routine);
-            _selEnglishVocabGroup = GetEnglishVocabGroup(_routine);
-            this.OutputLabel = _selGermanVocabGroup.ToString();
+            _selGermanVocabGroupDto = GetGermanVocabGroup(_routine);
+            _selEnglishVocabGroupDto = GetEnglishVocabGroup(_routine);
+            this.OutputLabel = _selGermanVocabGroupDto.ToString();
             this.StatsTotalVocabs = _vocabs.Count;
         }
 
@@ -73,8 +74,10 @@ namespace VokabelTrainer3.ViewModels
                 case InputState.NullOrEmpty:
                     bool isSkipping = await _pageService.DisplayAlert(" Status", " Your input is empty! \n Do you want to skip?", "YES", "NO");
                     if (!isSkipping) return;
-                    await _pageService.DisplayAlert(" Status", $" The correct vocab should be: \n\n {_selEnglishVocabGroup.ToString()}", "OK");
+
+                    await _pageService.DisplayAlert(" Status", $" The correct vocab should be: \n\n {_selEnglishVocabGroupDto.ToString()}", "OK");
                     this.StatsIncorrectVocabs++;
+                    _wrongVocabs.Add(new Vocabulary(_selEnglishVocabGroupDto.ToString(), _selGermanVocabGroupDto.ToString()));
                     break;
 
                 case InputState.Correct:
@@ -83,20 +86,21 @@ namespace VokabelTrainer3.ViewModels
                     break;
 
                 case InputState.Incorrect:
-                    await _pageService.DisplayAlert(" Status", $" The input was wrong! \n It should be: \n\n {_selEnglishVocabGroup.ToString()}", "OK");
+                    await _pageService.DisplayAlert(" Status", $" The input was wrong! \n It should be: \n\n {_selEnglishVocabGroupDto.ToString()}", "OK");
                     this.StatsIncorrectVocabs++;
+                    _wrongVocabs.Add(new Vocabulary(_selEnglishVocabGroupDto.ToString(), _selGermanVocabGroupDto.ToString()));
                     break;
             }
 
             await this.SelectNextVocabs();
-            this.OutputLabel = _selGermanVocabGroup.ToString();
+            this.OutputLabel = _selGermanVocabGroupDto.ToString();
 
         }
 
         private InputState CheckInput(string input)
         {
             if (string.IsNullOrEmpty(input)) return InputState.NullOrEmpty;
-            else if (_selEnglishVocabGroup.Any(x => x == input)) return InputState.Correct;
+            else if (_selEnglishVocabGroupDto.Any(x => x == input)) return InputState.Correct;
             else return InputState.Incorrect;
         }
 
@@ -106,25 +110,25 @@ namespace VokabelTrainer3.ViewModels
             if (_routine >= _vocabs.Count)
             {
                 await _pageService.DisplayAlert("Status", "You completed the quiz!", "ok");
-                await _navigatorService.PopToRootAsync();
+                await _navigatorService.PushWithParameterAsync<DisplayVocabsLVPageVM>(new NamedParameter("vocabs", _wrongVocabs));
             }
-            _selEnglishVocabGroup = this.GetEnglishVocabGroup(_routine);
-            _selGermanVocabGroup = this.GetGermanVocabGroup(_routine);
+            _selEnglishVocabGroupDto = this.GetEnglishVocabGroup(_routine);
+            _selGermanVocabGroupDto = this.GetGermanVocabGroup(_routine);
 
             this.InputEntry = "";
             this.StatsFinishedVocabs++;
         }
 
-        private EnglishVocabGroup GetEnglishVocabGroup(int elementAt)
+        private EnglishVocabGroupDTO GetEnglishVocabGroup(int elementAt)
         {
-            EnglishVocabGroup vocabGroup = _vocabs.ElementAt(elementAt).Key;
-            return vocabGroup;
+            EnglishVocabGroupDTO vocabGroupDto = _vocabs.ElementAt(elementAt).Key;
+            return vocabGroupDto;
         }
 
-        private GermanVocabGroup GetGermanVocabGroup(int elementAt)
+        private GermanVocabGroupDTO GetGermanVocabGroup(int elementAt)
         {
-            GermanVocabGroup vocabGroup = _vocabs.ElementAt(elementAt).Value;
-            return vocabGroup;
+            GermanVocabGroupDTO vocabGroupDto = _vocabs.ElementAt(elementAt).Value;
+            return vocabGroupDto;
         }
 
         #region I/O Properties

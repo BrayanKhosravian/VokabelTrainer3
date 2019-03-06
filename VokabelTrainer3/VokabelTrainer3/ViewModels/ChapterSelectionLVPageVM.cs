@@ -88,7 +88,13 @@ namespace VokabelTrainer3.ViewModels
             }
         });
 
-        public void CreateData()
+        public void ConfigureViewModel()
+        {
+            this.CreateData();
+            this.CreateChapters();
+        }
+
+        private void CreateData()
         {
             _data.Clear();
             var directories = Directory.GetDirectories(_path);
@@ -105,7 +111,7 @@ namespace VokabelTrainer3.ViewModels
 
         }
 
-        public void CreateChapters()
+        private void CreateChapters()
         {
             Chapters.Clear();
             int i = 0;

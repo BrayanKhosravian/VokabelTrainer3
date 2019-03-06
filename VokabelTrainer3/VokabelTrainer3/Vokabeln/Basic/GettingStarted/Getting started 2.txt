@@ -1,8 +1,8 @@
 ﻿case::Fall
 cash::Bargeld
 cash advance::Vorschuss
-certainly::Sicherlich
-certify::Bestätigen
+certainly::sicherlich
+certify::bestätigen
 change::umsteigen/ändern
 charge::Gebühr
 charge::Gebühr verrechnen

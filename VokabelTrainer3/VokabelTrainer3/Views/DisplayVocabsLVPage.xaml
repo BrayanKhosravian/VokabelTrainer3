@@ -3,30 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VokabelTrainer3.Views.DisplayVocabsLVPage">
 
-    <StackLayout>
-        <ListView x:Name="MyListView"
-                  ItemsSource="{Binding Vocabs}"
-                  ItemTapped="Handle_ItemTapped"
-                  CachingStrategy="RecycleElement">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="StyleHeader" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+            <Style x:Key="StyleVocabulary" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-            <!--Built in Cells-->
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Text="{Binding GermanVocabGroup}"/>
-                            <Label Grid.Column="1" Text="{Binding EnglishVocabGroup}"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="0"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="English" Style="{StaticResource StyleHeader}"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="German" Style="{StaticResource StyleHeader}"/>
+            </Grid>
 
-        <Button Text="Cancel" Command="{Binding CancelCommand}"/>
+            <ListView x:Name="MyListView"
+                      ItemsSource="{Binding Vocabs}"
+                      ItemTapped="MyListView_OnItemTapped">
 
-    </StackLayout>
+                <!--Built in Cells-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                         
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0"
+                                       Text="{Binding EnglishVocabModel}" 
+                                       Style="{StaticResource StyleVocabulary}"/>
+
+                                <Label Grid.Column="1"
+                                       Text="{Binding GermanVocabModel}" 
+                                       Style="{StaticResource StyleVocabulary}"/>
+
+                            </Grid>
+                 
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Cancel" Command="{Binding CancelCommand}" />
+
+        </StackLayout></ContentPage.Content>
 </ContentPage>
