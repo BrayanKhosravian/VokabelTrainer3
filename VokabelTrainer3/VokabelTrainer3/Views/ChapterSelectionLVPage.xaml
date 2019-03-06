@@ -14,7 +14,7 @@
             <DataTemplate>
                 <ViewCell>
                     <ContentView>
-                        <Label Text="{Binding GroupName}" VerticalOptions="Center" TextColor="Red"/>
+                        <Label Text="{Binding GroupName}" VerticalOptions="Center" TextColor="Red" Margin="30,0,0,0"/>
                         <ContentView.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Source={x:Reference ChapterSelectionPage}, 
                                                                     Path=BindingContext.GroupSelectedCommand}" 
@@ -29,7 +29,7 @@
             <DataTemplate >
                 <ViewCell>
                     <ContentView>
-                        <Label Text="{Binding ChapterName}" VerticalOptions="Center" />
+                        <Label Text="{Binding ChapterName}" VerticalOptions="Center" Margin="50,0,0,0"/>
                         <ContentView.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Source={x:Reference ChapterSelectionPage},
                                                                     Path=BindingContext.ChapterSelectedCommand}"

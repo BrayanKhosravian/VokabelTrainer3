@@ -7,7 +7,9 @@
         <StackLayout>
             <Label Text="Welcome to the vocabulary trainer" HorizontalOptions="Center"/>
 
-            <Button Text="Options" Command="{Binding Command_Options}"/>
+            <Button Text="Options" 
+                    Command="{Binding Command_Options}"
+                    IsEnabled="False"/>
 
             <Button Text="Basic Vocabs" 
                     Command="{Binding Command_BasicVocabs}" 
