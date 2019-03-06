@@ -35,12 +35,9 @@
             <ListView x:Name="MyListView"
                       ItemsSource="{Binding Vocabs}"
                       ItemTapped="MyListView_OnItemTapped">
-
-                <!--Built in Cells-->
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                         
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
@@ -54,9 +51,7 @@
                                 <Label Grid.Column="1"
                                        Text="{Binding GermanVocabModel}" 
                                        Style="{StaticResource StyleVocabulary}"/>
-
                             </Grid>
-                 
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -64,5 +59,6 @@
 
             <Button Text="Cancel" Command="{Binding CancelCommand}" />
 
-        </StackLayout></ContentPage.Content>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

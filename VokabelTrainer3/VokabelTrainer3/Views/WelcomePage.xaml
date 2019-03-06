@@ -15,13 +15,17 @@
 
             <Button Text="Advanced Vocabs" 
                     Command="{Binding Command_AdvancedVocabs}"
-                    CommandParameter="{x:Static VokabelTrainer3:Paths.AdvancedVocabsPath}"/>
+                    CommandParameter="{x:Static VokabelTrainer3:Paths.AdvancedVocabsPath}"
+                    IsEnabled="False"/>
 
             <Button Text="Custom Vocabs" 
                     Command="{Binding Command_CustomVocabs}"
-                    CommandParameter="{x:Static VokabelTrainer3:Paths.CustomVocabsPath}"/>
+                    CommandParameter="{x:Static VokabelTrainer3:Paths.CustomVocabsPath}"
+                    IsEnabled="False"/>
 
-            <Button Text="Statistics" Command="{Binding Command_Statistics}"/>
+            <Button Text="Statistics" 
+                    Command="{Binding Command_Statistics}"
+                    IsEnabled="False"/>
 
         </StackLayout>
     </ContentPage.Content>

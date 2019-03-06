@@ -24,6 +24,7 @@
                 </ViewCell>
             </DataTemplate>
         </ListView.GroupHeaderTemplate>
+
         <ListView.ItemTemplate>
             <DataTemplate >
                 <ViewCell>
