@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace VokabelTrainer3.ViewModels
 {
     class QuizPageVM : BaseVM
     {
+        public string Title => Path.GetFileName(_chapterPath);
+
         private Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO> _vocabs = new Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO>();
         private List<Vocabulary> _wrongVocabs = new List<Vocabulary>();
         private EnglishVocabGroupDTO _selEnglishVocabGroupDto;
@@ -110,7 +113,7 @@ namespace VokabelTrainer3.ViewModels
             if (_routine >= _vocabs.Count)
             {
                 await _pageService.DisplayAlert("Status", "You completed the quiz!", "ok");
-                await _navigatorService.PushWithParameterAsync<DisplayVocabsLVPageVM>(new NamedParameter("vocabs", _wrongVocabs));
+                await _navigatorService.PushWithParametersAsync<DisplayVocabsLVPageVM>(new NamedParameter("vocabs", _wrongVocabs));
             }
             _selEnglishVocabGroupDto = this.GetEnglishVocabGroup(_routine);
             _selGermanVocabGroupDto = this.GetGermanVocabGroup(_routine);

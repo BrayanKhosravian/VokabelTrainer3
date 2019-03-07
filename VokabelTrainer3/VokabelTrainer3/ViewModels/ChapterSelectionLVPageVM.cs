@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Autofac;
@@ -18,6 +19,8 @@ namespace VokabelTrainer3.ViewModels
 {
     class ChapterSelectionLVPageVM : BaseVM
     {
+        public string Title => _directoryService.GetLastDirectoryName(_path);
+
         public ObservableCollection<ChapterGroup> Chapters { get; private set; } = new ObservableCollection<ChapterGroup>();
         private readonly List<ChapterGroup> _data = new List<ChapterGroup>();
         // comment is to provide a knowledge on how _data looks like
@@ -148,6 +151,7 @@ namespace VokabelTrainer3.ViewModels
                 group.IsSelected = false;
             }
         }
+
 
     }
 }

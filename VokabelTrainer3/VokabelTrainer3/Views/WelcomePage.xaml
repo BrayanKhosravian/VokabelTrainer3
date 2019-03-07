@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:VokabelTrainer3="clr-namespace:VokabelTrainer3;assembly=VokabelTrainer3"
-             x:Class="VokabelTrainer3.Views.WelcomePage">
+             x:Class="VokabelTrainer3.Views.WelcomePage"
+             Title="Home page">
+
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to the vocabulary trainer" HorizontalOptions="Center"/>
