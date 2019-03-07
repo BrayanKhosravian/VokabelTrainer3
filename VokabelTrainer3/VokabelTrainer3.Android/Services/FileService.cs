@@ -60,11 +60,14 @@ namespace VokabelTrainer3.Droid.Services
                 }
                 else if (_textFileParser.PathContains(resource, "Advanced"))
                 {
-                    this.ResourceWriter(Paths.AdvancedVocabsPath, resource);
+                    if (_textFileParser.PathContains(resource, "News"))
+                    {
+                        this.ResourceWriter(Paths.News, resource);
+                    }
                 }
                 else if (_textFileParser.PathContains(resource, "Custom"))
                 {
-                    this.ResourceWriter(Paths.CustomVocabsPath, resource);
+                    // implement to write .txt to the custom directory
                 }
             }
 

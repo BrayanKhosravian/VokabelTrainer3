@@ -1,0 +1,68 @@
+﻿detention::Haft
+determined::entschlossen
+devastating::verheerend
+disclose::enthüllen
+discount::beeinträchtigen/unberücksichtigt lassen
+dismiss::entlassen
+distort::verdrehen/verzerren/veformen
+distress::Kummer/Pein/Schmerz
+district attorney::Staatsanwalt
+duck::sich ducken
+effect on::Auswirkung auf
+effect::(be)wirken
+embark on::anfangen/unternehmen
+emerge::hervorkommen
+enact a law::ein Gesetz beschließen
+enforcement::Durchsetzung/Vollstreckung/Vollzug
+enticement::Anreiz
+entitle to::berechtigen zu
+escape::entfliehen
+evidence::Beweismaterial
+exceed::überschreiten
+exception::Ausnahme
+expect::erwarten
+expenses::Ausgaben
+explain::erklären
+eye-for-eye::Aug um Aug
+faith=belief::Glaube
+felony::Verbrechen
+fence::Zaun
+ferocity::Wildheit
+figure::Zahl
+fire a gun::Waffe abfeuern
+fire::feuern
+focus::Brennpunkt
+foray::Beutezug/Raubzug/Überfall
+force::Gewalt
+force::erzwingen
+form a judgment::Urteil bilden
+fury::Wut
+grab::ergreifen
+grant::gewähren
+grenade::Granate
+groom::Bräutigam
+guard::Wache
+hail of gun fire::Geschoßhagel
+hamper::behindern
+handguns::Handfeuerwaffen
+harm/injure::verletzen
+hideous::abscheulich/schrecklich
+highway code::Straßenverkehrsordnung
+hijacking::Flugzeugentführung
+humiliate::erniedrigen
+impressive::beeindruckend
+in recent years::in den letzten Jahren
+income::Einkommen
+incur::auf sich laden/geraten in
+indict for::verurteilen wegen
+indictment::Verurteilung
+influence::Einfluß
+infringe::brechen/verletzen (Gesetz, Eid)
+inhabitant::Einwohner
+insist on::bestehen auf
+intervene::sich einmischen
+intruder::Eindringling
+invade::einmaschieren
+investigate::ermitteln/nachforschen
+investigation::Ermittlung
+judge::Richter

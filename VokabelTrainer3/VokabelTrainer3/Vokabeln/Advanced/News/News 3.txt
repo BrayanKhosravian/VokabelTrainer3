@@ -1,0 +1,71 @@
+﻿defensive::abwehrend
+deliberate::beraten
+jury::Geschworenen
+justice::Gerechtigkeit
+keep an eye on::ein Auge werfen auf
+keep at a certain level::auf einem bestimmten Niveau halten
+keep pace with/keep up with::Schritt halten mit 
+law and order::Recht und Ordnung
+legislator::Gesetzgeber
+legislature::Gesetzgebung
+liberate::befreien
+liberty::Freiheit
+likely::wahrscheinlich
+long neglected::lange vernachlässigt
+means::Mittel
+medical treatment::medizinische Behandlung
+menace/threat::Bedrohung
+menace::bedrohen
+miss::verpassen/vermissen
+mistake for::verwechseln mit
+moderate::mäßig
+mortgage::Hypothek
+movement::Bewegung
+movie goers::Kinogeher
+murder::Mord
+murderer::Mörder
+neglect::vernachlässigen
+negotiate::verhandeln
+negotiations::Verhandlungen
+nosy/curious::neugierig
+object to::beanstanden
+obligation::Verpflichtung
+odd	ungerade::merkwürdig
+offense	Angriff
+outpour::ausschütten
+paratrooper::Fallschirmspringer
+pass a law::ein Gesetz beschließen
+peacemaking efforts::Friedensbemühungen
+peak::Spitze
+perceive::wahrnehmen/begreifen
+pistol/gun::Schußwaffe
+pocket knife::Taschenmesser
+poll::Umfrage
+possession::Besitz
+praise::loben
+predict::vorhersagen
+pressure::Druck
+prevent::verhindern
+previous::vorherig
+proceeding::Vorgangsweise
+progress/advance::Fortschritt
+prohibit::verbieten
+promise::versprechen
+prone::auf dem Boden liegend
+property::Eigenschaft, Eigentum
+prosecution::gerichtliche Verfolgung
+protection::Schutz
+provide::liefern
+pull the trigger::den Hahn ziehen
+punish::bestrafen
+rage::Wut
+raid::Überfall
+reason::Grund
+reception::Empfang
+recover::sich erholen
+reduce::verringern
+refer to::sich beziehen auf
+refugee::Flüchtling
+refuse::zurückweisen
+regard::betrachten
+representative::Vertreter

@@ -1,0 +1,68 @@
+﻿(back) yard::(Hinter)hof
+accomplishment::Ausführung
+according to::gemäß
+act::handeln
+add::hinzufügen
+adopt::annehmen
+air force::Luftwaffe
+air raid::Luftangriff
+annual::jährlich
+applicant::Berwerber
+apply for::bewerben
+armored::gepanzert
+assailant::Angreifer/Gegener
+attack::Angriff
+attack::angreifen
+attempt::Versuch
+attorney::Anwalt
+attract attention::Aufmerksamkeit erregen
+authority::Behörde
+automatic banking machine::Bankomat
+avoid::vermeiden
+basement::Kellergeschoß
+be headed by::angeführt werden von
+be in progress::im Werden sein
+belief::Glaube
+bill::Gesetztesentwurf
+bride::Braut
+bullet::Kugel
+burglar::Einbrecher
+burial::Begräbnis
+burst out::herausplatzen
+calm::ruhig
+candy::Süßigkeiten
+capital punishment::Todesstrafe
+carry weapons::Waffen tragen
+chairman::Vorsitzender
+chase::jagen
+circumscribe::beschreiben
+circumstances::Umstände
+civil::bürgerlich
+civil rights::Bürgerrechte
+civil rights code::bürgerliches Gesetzbuch
+civilian::Zivilist
+claim responsiblity for::Verantwortung übernehmen für
+claim::behaupten
+clash::Zusammenstoß
+code::Gesetzbuch
+commit a crime::ein Verbrechen begehen
+community::Gemeinde
+compensation::Wiedergutmachung
+concern::Angelegenheit/Bedeutung
+conduct::führen
+consider::in Betracht ziehen 
+constitution::Verfassung
+cooperation::Zusammenarbeit
+counsel::Ratsversammlung/Komitee/Rechtsbeistand
+counter attack::Gegenangriff
+court::Gericht
+courtroom::Gerichtssaal
+criminal/felon::Verbrecher
+crook::Ganove
+curfew::Ausgangssperre
+decision::Entscheidung
+declaration::Erklärung
+decline::verfallen
+defeat::besiegen
+defendant::Angeklagter
+defenseless::wehrlos

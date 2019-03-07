@@ -22,13 +22,8 @@ namespace VokabelTrainer3.Droid.Services
         {
             if(_executed) return;
 
-            this.CreateDirectory(Paths.RootPath);
-            this.CreateDirectory(Paths.BasicVocabsPath);
-            this.CreateDirectory(Paths.AdvancedVocabsPath);
-            this.CreateDirectory(Paths.CustomVocabsPath);
-
-            var basicVocabsPaths = Paths.GetBasicVocabsPaths;
-            foreach (var path in basicVocabsPaths)
+            var allPaths = Paths.AllPaths;
+            foreach (var path in allPaths)
             {
                 this.CreateDirectory(path);
             }

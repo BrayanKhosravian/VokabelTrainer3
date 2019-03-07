@@ -1,0 +1,66 @@
+﻿judgment::Urteil
+judiciary::Rechtssprechung/Gerichtswesen
+reputation::Ruf
+rescue::retten
+resident::Einwohner
+resume::wieder aufnehmen
+retaliate/take revenge on::sich rächen/Rache üben
+retaliation::revenge::Rache
+reversal::Umkehr(ung)
+rifle::Gewehr
+riot::Aufruhr
+roam::umherstreifen
+rule::herrschen
+run for one´s life::um sein Leben rennen
+run the risk of:Risiko eingehen
+savings:Ersparnisse
+seize/grab::ergreifen
+selfdefense::Selbstverteidigung
+set off an alarm::Alarm auslösen
+severity::Ernsthaftigkeit
+shed::Hütte/Schupfen
+shift::Schicht
+skill::Fähigkeiten
+soldier::Soldat
+spokesman::Sprecher
+squeeze::hineinquetschen/drücken
+stab::erstechen
+statement::Erklärung/Feststellung
+storage::Aufbewahrung
+strike back at::zurückschlagen
+subdue::unterwerfen
+success::Erfolg
+suicide::Selbstmord
+support::Unterstützung
+surprised::überrascht
+survey::Überblick
+suspect::Verdächtiger
+suspect::verdächtigen
+suspicion::verdacht
+suspicious::verdächtig
+sympathy::Mitleid
+take hostages::Geisel nehmen
+target::Ziel (militärisch)
+telephone booth::Telephonzelle
+terrified::erschreckt
+testify::Zeugenaussage machen,bezeugen
+threat::Bedrohung
+tower::Turm
+treatment::Behandlung
+tread on::treten
+trial::Verhandlung
+unarmed::unbewaffnet
+unemployment::Arbeitslosigkeit
+unexpected::unerwartet
+unmistakable::unverwechselbar
+unreasonable::unvernünftig
+urge::drängen
+victim::Opfer
+violate the law::Gesetz verletzen
+violence::Gewalt
+violent::gewalttätig
+vulnerable::verletzlich
+weakon-ed-ed::schwächen
+wedding::Hochzeit
+wound::Wunde
+yearn::sich sehnen nach

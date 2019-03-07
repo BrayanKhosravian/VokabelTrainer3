@@ -25,14 +25,16 @@ namespace VokabelTrainer3
         public static string TravellingAbroad { get; } = Path.Combine(BasicVocabsPath, "Travelling abroad");
 
         // Children paths from "advanced" parent paths
-
+        public static string News { get; } = Path.Combine(AdvancedVocabsPath, "News");
 
         // Children paths from "custom" parent paths
-
-
-        // get paths from each parent path
-      //  public static  string[]
-        public static string[] GetBasicVocabsPaths => new[] { AtTheHotel, CarRental, GettingStarted, TheJourney, TravellingAbroad };
-        // public static string[] GetAdvancedVocabsPaths => new[] { };
+        // ..
+        
+        // get all paths
+        public static string[] AllPaths => new string[]{RootPath,                   // Root
+            BasicVocabsPath, AdvancedVocabsPath, CustomVocabsPath,                  // parent paths of Root
+            AtTheHotel, CarRental, GettingStarted, TheJourney, TravellingAbroad,    // basic paths
+            News                                                                    // advanced paths
+        };
     }
 }

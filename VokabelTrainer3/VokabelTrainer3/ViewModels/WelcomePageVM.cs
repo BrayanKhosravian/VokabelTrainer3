@@ -22,7 +22,7 @@ namespace VokabelTrainer3.ViewModels
         public ICommand Command_Options { get; }
 
         public ICommand Command_BasicVocabs    => new Command<string>(ToChapterSelectionListView);
-        public ICommand Command_AdvancedVocabs => new Command<string>(ToChapterSelectionListView, canExecute => false);
+        public ICommand Command_AdvancedVocabs => new Command<string>(ToChapterSelectionListView);
         public ICommand Command_CustomVocabs   => new Command<string>(ToChapterSelectionListView, canExecute => false);
 
         public ICommand Command_Statistics { get; }

@@ -17,8 +17,7 @@
 
             <Button Text="Advanced Vocabs" 
                     Command="{Binding Command_AdvancedVocabs}"
-                    CommandParameter="{x:Static VokabelTrainer3:Paths.AdvancedVocabsPath}"
-                    IsEnabled="False"/>
+                    CommandParameter="{x:Static VokabelTrainer3:Paths.AdvancedVocabsPath}"/>
 
             <Button Text="Custom Vocabs" 
                     Command="{Binding Command_CustomVocabs}"
