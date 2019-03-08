@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Autofac;
+﻿using Autofac;
 using VokabelTrainer3.ViewModels;
 using VokabelTrainer3.Views;
 

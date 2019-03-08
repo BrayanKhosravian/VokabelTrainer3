@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
+using System.IO;
 using System.Windows.Input;
 using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
@@ -12,7 +11,8 @@ namespace VokabelTrainer3.ViewModels
 {
     class DisplayVocabsLVPageVM : BaseVM
     {
-        public string Title => _directoryService.GetLastDirectoryName(_chapterPath);
+        public string Title => !string.IsNullOrEmpty(_chapterPath) ? Path.GetFileName(_chapterPath) : null;
+
         public ObservableCollection<Vocabulary> Vocabs { get; private set; }
 
         private readonly INavigatorService _navigatorService;

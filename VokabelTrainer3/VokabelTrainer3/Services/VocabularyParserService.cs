@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
 using VokabelTrainer3.ServiceModels;
 

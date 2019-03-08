@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using VokabelTrainer3.Droid.Helpers;
-using VokabelTrainer3.Droid.Interfaces;
 using VokabelTrainer3.Droid.Services;
-using VokabelTrainer3.Interfaces;
 
 namespace VokabelTrainer3.Droid
 {

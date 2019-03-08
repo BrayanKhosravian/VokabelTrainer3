@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Autofac;
-using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
 using VokabelTrainer3.ServiceModels;
 using VokabelTrainer3.Services;

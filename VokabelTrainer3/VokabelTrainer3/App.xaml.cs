@@ -1,11 +1,6 @@
-﻿using Autofac;
-using VokabelTrainer3.Interfaces;
-using VokabelTrainer3.Services;
-using VokabelTrainer3.ViewModels;
-using VokabelTrainer3.Views;
+﻿using VokabelTrainer3.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using VokabelTrainer3.Bootstrapper;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace VokabelTrainer3

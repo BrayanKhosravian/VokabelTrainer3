@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace VokabelTrainer3.Models
 {

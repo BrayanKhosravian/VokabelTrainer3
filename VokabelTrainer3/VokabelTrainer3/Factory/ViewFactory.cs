@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Autofac;
 using Autofac.Core;
 using VokabelTrainer3.Exceptions;

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Autofac;
-using VokabelTrainer3.Interfaces;
+﻿using Autofac;
 using VokabelTrainer3.Services;
 
 namespace VokabelTrainer3.Bootstrapper.Modules

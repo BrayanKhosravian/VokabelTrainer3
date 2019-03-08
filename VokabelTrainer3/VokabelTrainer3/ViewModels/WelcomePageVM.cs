@@ -5,7 +5,6 @@ using System.Windows.Input;
 using Autofac;
 using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Services;
-using VokabelTrainer3.Views;
 using Xamarin.Forms;
 
 namespace VokabelTrainer3.ViewModels

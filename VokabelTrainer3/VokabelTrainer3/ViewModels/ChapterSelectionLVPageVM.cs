@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Autofac;
 using VokabelTrainer3.Interfaces;
 using VokabelTrainer3.Models;
 using VokabelTrainer3.Services;
-using VokabelTrainer3.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 
 namespace VokabelTrainer3.ViewModels
 {

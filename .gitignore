@@ -1,3 +1,10 @@
+Screenshots/*
+Feedback/*
+Video/*
+VokabelTrainer3\VokabelTrainer3\bin/*
+VokabelTrainer3\VokabelTrainer3.Android\obj/*
+VokabelTrainer3\VokabelTrainer3.Android\bin/*
+
 ###### -- File Created With Git Source Control Provider 2015 -- ######
 ###### -- From https://github.com/github/gitignore -- ######
 ###### -- Warning Regenerating this file will erase all your custom ignores, unless you add them below the Custom Ignore section at the bottom --  ######
@@ -356,3 +363,35 @@ Feedback/23.02.2019/2.PNG
 Feedback/23.02.2019/4.PNG
 Feedback/23.02.2019/3.PNG
 Feedback/23.02.2019/5.PNG
+
+#Ignore thumbnails created by Windows
+Thumbs.db
+#Ignore files built by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+.vs/
+#Nuget packages folder
+packages/

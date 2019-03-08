@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using VokabelTrainer3.Interfaces;
 using Xamarin.Forms;
 
 namespace VokabelTrainer3.Services
