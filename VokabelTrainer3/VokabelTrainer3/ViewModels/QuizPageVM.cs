@@ -64,7 +64,7 @@ namespace VokabelTrainer3.ViewModels
 
         private async Task NextVocab()
         {
-            string input = this.InputEntry?.ToLower().Replace(" ", "");
+            string input = this.InputEntry;
 
             InputState inputState = this.CheckInput(input);
 

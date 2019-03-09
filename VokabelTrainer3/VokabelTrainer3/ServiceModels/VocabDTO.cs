@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace VokabelTrainer3.ServiceModels
 {
-    abstract class VocabDTO : IEnumerable<string>
+    public abstract class VocabDTO : IEnumerable<string>
     {
         public IEnumerable<string> Words { get; private set; } = new List<string>();
 

@@ -1,7 +1,7 @@
 ﻿
 namespace VokabelTrainer3.Models
 {
-    class Vocabulary
+    public class Vocabulary
     {
         public string EnglishVocabModel { get; private set; }
         public string GermanVocabModel { get; private set; }

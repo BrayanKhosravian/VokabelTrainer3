@@ -9,6 +9,8 @@ namespace VokabelTrainer3.Services
     {
         Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO> GetRandomizedVocabDictionary(string path);
         ObservableCollection<Vocabulary> GetVocabularyForView(string path);
+
+        string FormatVocabForQuiz(string vocab);
     }
 }
 

@@ -8,7 +8,7 @@ using VokabelTrainer3.ServiceModels;
 
 namespace VokabelTrainer3.Services
 {
-    class VocabularyParserService : IVocabularyParserService
+    public class VocabularyParserService : IVocabularyParserService
     {
         private Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO> _vocabs = new Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO>();
 
@@ -36,6 +36,21 @@ namespace VokabelTrainer3.Services
             }
 
             return outputCollection;
+        }
+
+        public string FormatVocabForQuiz(string vocab)
+        {
+            if(string.IsNullOrEmpty(vocab)) throw new ArgumentNullException();
+
+            string result = vocab.Trim();     // removes spaces before and after a sentence
+            if (result.Contains("(") && result.Contains(")"))
+            {
+                int indexOfOpen = result.IndexOf('(');
+                int indexOfClose = result.IndexOf(')');
+                result = result.Substring(0, indexOfOpen) + result.Substring(indexOfClose + 1);
+            }
+
+            return result;
         }
 
         private void CreateDictionaryFromFile(string path)
