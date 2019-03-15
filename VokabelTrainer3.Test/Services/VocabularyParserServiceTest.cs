@@ -34,7 +34,6 @@ namespace VokabelTrainer3.Test.Services
                 index++;
             }
           
-
             // assert
             index = 0;
             foreach (var result in results)
@@ -43,6 +42,31 @@ namespace VokabelTrainer3.Test.Services
                 index++;
             }
    
+        }
+
+        [Test]
+        public void FormatVocabForQuit_DeletesStringBetweenBrackets_ReturnsFormatedString() // deletes between '(' and ')'
+        {
+            // arrange
+            var vocabularyParser = new VocabularyParserService();
+            string[] inputs = new string[2] { "(delete)test", "test(delete)"};
+            string[] results = new string[2];
+
+            // act
+            int index = 0;
+            foreach (var input in inputs)
+            {
+                results[index] = vocabularyParser.FormatVocabForQuiz(input);
+                index++;
+            }
+
+            // assert
+            index = 0;
+            foreach (var result in results)
+            {
+                Assert.That(result, Is.EqualTo("test"));
+                index++;
+            }
         }
     }
 }

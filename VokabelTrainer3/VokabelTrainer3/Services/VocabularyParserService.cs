@@ -10,14 +10,14 @@ namespace VokabelTrainer3.Services
 {
     public class VocabularyParserService : IVocabularyParserService
     {
-        private Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO> _vocabs = new Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO>();
+        private Dictionary<EnglishVocabGroup, GermanVocabGroup> _vocabs = new Dictionary<EnglishVocabGroup, GermanVocabGroup>();
 
         public VocabularyParserService()
         {
 
         }
 
-        public Dictionary<EnglishVocabGroupDTO, GermanVocabGroupDTO> GetRandomizedVocabDictionary(string path)
+        public Dictionary<EnglishVocabGroup, GermanVocabGroup> GetRandomizedVocabDictionary(string path)
         {
             CreateDictionaryFromFile(path);
             this.RandomizeDictionary();
@@ -66,26 +66,26 @@ namespace VokabelTrainer3.Services
             }
         }
 
-        private EnglishVocabGroupDTO GetEnglishVocabGroup(string line)
+        private EnglishVocabGroup GetEnglishVocabGroup(string line)
         {
 
             var temp = line.Split("::".ToCharArray())[0];   // get left side of "::"
             var englishVocabs = temp.Split("/".ToCharArray());
 
-            EnglishVocabGroupDTO vocabGroupDto = new EnglishVocabGroupDTO(englishVocabs);
+            EnglishVocabGroup vocabGroup = new EnglishVocabGroup(englishVocabs);
 
-            return vocabGroupDto;
+            return vocabGroup;
         }
 
-        private GermanVocabGroupDTO GetGermanVocabGroup(string line)
+        private GermanVocabGroup GetGermanVocabGroup(string line)
         {
 
             var temp = line.Split("::".ToCharArray())[2];   // get right side of "::"
             var germanVocabs = temp.Split("/".ToCharArray());
 
-            GermanVocabGroupDTO vocabGroupDto = new GermanVocabGroupDTO(germanVocabs);
+            GermanVocabGroup vocabGroup = new GermanVocabGroup(germanVocabs);
 
-            return vocabGroupDto as GermanVocabGroupDTO;
+            return vocabGroup as GermanVocabGroup;
         }
 
         private bool IsUsingFormat(string line, string match)

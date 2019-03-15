@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace VokabelTrainer3.ServiceModels
 {
-    public abstract class VocabDTO : IEnumerable<string>
+    public abstract class Vocab : IEnumerable<string>
     {
         public IEnumerable<string> Words { get; private set; } = new List<string>();
 
-        protected VocabDTO(string[] words)
+        protected Vocab(string[] words)
         {
             if (words?.Length <= 0) throw new IndexOutOfRangeException();
             Words = new List<string>(AddVocabs(words));

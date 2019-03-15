@@ -23,8 +23,8 @@ exception::Ausnahme
 expect::erwarten
 expenses::Ausgaben
 explain::erklären
-eye-for-eye::Aug um Aug
-faith=belief::Glaube
+eye for eye::Aug um Aug
+faith/belief::Glaube
 felony::Verbrechen
 fence::Zaun
 ferocity::Wildheit

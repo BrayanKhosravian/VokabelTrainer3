@@ -60,7 +60,7 @@ violate the law::Gesetz verletzen
 violence::Gewalt
 violent::gewalttätig
 vulnerable::verletzlich
-weakon-ed-ed::schwächen
+weakon::schwächen
 wedding::Hochzeit
 wound::Wunde
 yearn::sich sehnen nach
